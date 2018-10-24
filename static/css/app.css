@@ -1,0 +1,36 @@
+.log-in-form {
+  border: 1px solid #cacaca;
+  padding: 1rem;
+  border-radius: 0;
+}
+.outer-wrapper {
+  padding: 1rem;
+
+}
+.formel {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px !important;
+}
+
+#aufgabenStellung {
+  padding: 0px !important;
+}
+
+#ergebnis{
+  padding-left: 50px;
+  padding-right: 50px;
+
+}
+#loesungswort {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.select-input{
+  color:blue;
+  font-size:20px;
+}
+p {
+
+
+}

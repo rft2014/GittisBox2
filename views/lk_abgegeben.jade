@@ -1,0 +1,28 @@
+extends ./base
+
+html
+  head
+    title : title
+
+block content
+  div.outer-wrapper
+    div(class='success callout')
+      h4.text-center Hallo #{firstname}
+      case Note
+        when '1'
+          h4.text-center Super!
+        when '2'
+          h4.text-center Gut gemacht!
+        when '3'
+          h4.text-center Nicht schlecht, aber das kannst du bestimmt noch besser.
+        when '4'
+          h4.text-center Na, das reicht gerade mal so aus. Ist ok, aber da musst du unbedingt dran arbeiten.
+        when '5'
+          h4.text-center Was ist los mit dir? So wird das nichts.
+            | Daran musst du arbeiten.
+        when '6'
+          h4.text-center Entweder war das heut nicht dein Tag oder du hast ein
+            | ernsthaftes Problem. Daran muss du dringend arbeiten.
+      h4.text-center Du hast die Note
+      h1.text-center #{Note}
+    a(href='/logout' class='button large expanded') Ausloggen

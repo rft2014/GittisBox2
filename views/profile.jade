@@ -1,0 +1,13 @@
+extends ./base
+
+html
+	head
+		title= title
+
+block content
+	div.log-in-form
+		h1.text-center Profile Page
+		a(href='/logout' class='button large expanded') Ausloggen
+		p	Benutzername:  #{user.local.username}
+		p	Passworthash:  #{user.local.password}
+		p	Funktion:  #{user.local.role}

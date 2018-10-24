@@ -1,0 +1,17 @@
+extends ./base
+
+html
+	head
+		title= title
+
+block content
+	form.log-in-form(action="/login" method="POST")
+			h4.text-center Anmeldung
+			if message.length > 0
+				div(class='callout warning') #{message}
+			label Benutzername
+				input(type="text" placeholder="Benutzername" name='username')
+			label Passwort
+				input(type="password" placeholder="Passwort" name='password')
+			p
+				input(type="submit" class="button large expanded" value="Anmelden")

@@ -1,0 +1,57 @@
+extends ./base_ons
+
+html
+	head
+		title : title
+		block extrajs
+			script(type="text/javascript" async src="/js/MathJax/MathJax.js?config=MML_CHTML")
+			script(src='/aufgabentypen/add1_ons.js')
+			script(src='/js/app.js')
+	block content
+		div#user #{user}
+		div#firstname #{firstname}
+		div#lastname #{lastname}
+		div#klasse #{klasse}
+		div#aufg_id #{aufgabenDaten.Aufgaben_id}
+		div#maxAufgabenAnzahl #{aufgabenDaten.Aufgaben.length}
+		ons-page
+			ons-toolbar
+				div.left
+					ons-toolbar-button(onclick='kar_zurueck()')
+						ons-icon(icon='md-chevron-left')
+				div.center
+					span#bezeichnung Aufgabe:&nbsp;
+					span#aktAufgabe
+					span#slash /
+					span#anzahlAufgaben #{aufgabenDaten.Aufgaben.length}
+				div.right
+					ons-toolbar-button(onclick='kar_weiter()')
+						ons-icon(icon='md-chevron-right')
+			//ons-bottom-toolbar
+			//		div(id='bottom-toolbar')	#{firstname} #{lastname}, Kl.: #{klasse}
+			ons-carousel#kar(fullscreen swipeable auto-scroll)
+				ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card
+							h3 Hallo #{firstname}!
+							p Willkommen zu: #{aufgabenDaten.title}
+							p Wenn du den Bildschirm nach links oder rechts wischst,
+								| kannst du durch die Aufgaben bl&auml;ttern. Trag die
+								| L&ouml;sungen ein. Wenn du dir sicher bist, alle Aufgaben
+								| gel&ouml;st zu haben, kannst du den Test auf der Seite nach
+								| der letzten Aufgabe abgeben.
+							p Ich w&uuml;nsche dir viel Erfolg!
+				-	for(var i=0;i< aufgabenDaten.Aufgaben.length;i++)
+					ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card(id='aufgabenStellung')
+							p.formel
+								math
+									mi(id='sum1_'+i) #{aufgabenDaten.Aufgaben[i].sum1}
+									mo +
+									mi(id='sum2_'+i) #{aufgabenDaten.Aufgaben[i].sum2}
+						ons-card
+							ons-input(class='loesung' id='ergebnis_'+i type='number' modifier='underbar')
+				ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card Das wars
+						ons-bottom-toolbar
+							section(style="padding:4px")
+								ons-button(modifier="large" id="btn_abgeben" onclick="loesung_abgeben()") Lösung abgeben

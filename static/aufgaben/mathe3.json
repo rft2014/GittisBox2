@@ -1,0 +1,72 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Ma Kl. 5, Addition ganzer Zahlen bis 1000",
+	"description": "Klasse 5 Aufgabe 3",
+	"Aufgabentyp": "add1",
+	"Aufgaben_id": "ma_5_00003",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"sum1": {
+			"description": "erster Summand",
+			"type": "number"
+		},
+		"sum2": {
+			"description": "zweiter Summand",
+			"type": "number"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"sum1": 124,
+		"sum2": 248
+	},
+	{
+		"id": 2,
+		"sum1": 336,
+		"sum2": 34
+	},
+	{
+		"id": 3,
+		"sum1": 827,
+		"sum2": 95
+	},
+{
+		"id": 4,
+		"sum1": 321,
+		"sum2": 162
+	},
+{
+		"id": 5,
+		"sum1": 22,
+		"sum2": 565
+	},
+	{
+		"id": 1,
+		"sum1": 94,
+		"sum2": 48
+	},
+	{
+		"id": 2,
+		"sum1": 123,
+		"sum2": 264
+	},
+	{
+		"id": 3,
+		"sum1": 577,
+		"sum2": 99
+	},
+{
+		"id": 4,
+		"sum1": 121,
+		"sum2": 462
+	},
+{
+		"id": 5,
+		"sum1": 333,
+		"sum2": 666
+	}
+]}
