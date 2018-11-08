@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var antwortSchema = new mongoose.Schema({
-    ergebnis: Number,
+    ergebnis: String,
     korrekt: Boolean,
   });
 

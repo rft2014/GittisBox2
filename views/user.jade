@@ -3,17 +3,15 @@ extends ./base
 html
 	head
 		title : title
-		block extrajs
-			script(src='aufgabentypen/add1.js')
 
 block content
-	h1.text-center Userseite
-	p Benutzername:  #{user}
-	p Funktion:  #{role}
-	p Name: #{firstname} #{lastname}
-	p UserID: #{UID}
-	p Session: #{Session.passport.user}
-	a(href='/lk' class='button large expanded') Start
-	a(href='/ons' class='button large expanded') Onsen Start
-	a(href='/logout' class='button large expanded') Ausloggen
-	p #{aufgaben}
+	div.log-in-form
+		h1.text-center Hallo, #{firstname} #{lastname} !
+			//p Willkommen  #{user}
+			//p Funktion:  #{role}
+			//p Willkommen #{firstname} #{lastname} !
+			//p UserID: #{UID}
+			//p Session: #{Session.passport.user}
+		a(href='/aufgabe_loesen' class='button large expanded') Los geht's
+		a(href='/logout' class='button large expanded') Ausloggen
+			//p #{aufgaben}

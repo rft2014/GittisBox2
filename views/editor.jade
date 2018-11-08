@@ -1,0 +1,81 @@
+extends ./base
+
+html
+  head
+    title= title
+    block extrajs
+      script(src='/js/quill_editor.js')
+      script(src='/js/quill.min.js')
+    block extracss
+      link(href='/css/quill_editor.css', rel='stylesheet')
+block content
+  div#toolbar
+    button#begin_luecke Beginn Lücke
+    button#end_luecke Ende Lücke
+    button#begin_aufzaehlung Beginn Aufz&auml;hlung
+    button#end_aufzaehlung Ende Aufz&auml;hlung
+  div#editor
+    p Hallo Ihr da
+  button(type='button' id='saveDelta' class='success button') L&uuml;ckentextaufgabe speichern
+  script.
+    var delta;
+    var editor = new Quill('#editor',{
+      modules: {toolbar:'#toolbar'},
+      theme : 'snow'
+      });
+    $('#saveDelta').click(function(){
+      delta = editor.getContents();
+      console.log(delta.ops[2].insert);
+      sendData();
+    });
+    function sendData(){
+     $.ajax({
+     url:'/save-editor',
+     type: 'POST',
+     data: JSON.stringify(delta),
+     contentType: 'application/json; charset=utf-8',
+              });
+      }
+      var customButton = document.querySelector('#begin_luecke');
+      begin_luecke.addEventListener('click', function() {
+      var range = editor.getSelection();
+      if (range) {
+        editor.insertText(range.index, "<Start Lücke>",{
+        'color':'green'
+        });
+            }
+        });
+      var customButton = document.querySelector('#end_luecke');
+      end_luecke.addEventListener('click', function() {
+      var range = editor.getSelection();
+      if (range) {
+        editor.insertText(range.index, "</Ende Lücke>",{
+        'color':'green'
+        });
+            }
+        });
+      var customButton = document.querySelector('#begin_aufzaehlung');
+      begin_aufzaehlung.addEventListener('click', function() {
+      var range = editor.getSelection();
+      if (range) {
+        editor.insertText(range.index, "<Start Aufzählung>",{
+        'color':'red'
+        });
+            }
+        });
+      var customButton = document.querySelector('#end_aufzaehlung');
+      end_aufzaehlung.addEventListener('click', function() {
+      var range = editor.getSelection();
+      var txt = "</Ende Aufzählung>"
+      if (range) {
+        editor.insertText(range.index, "</Ende Aufzählung>",{
+        'color':'red'
+        });
+            }
+        });
+
+        if(document.hasFocus()){
+        console.log("habe focus")
+        }else{
+        console.log("habe keinen focus")
+        }

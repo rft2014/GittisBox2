@@ -12,18 +12,23 @@ block content
 					h3 Aktive Klasse:
 					td
 						select(name="klasse")
-							option(value="5a") 5a
-							option(value="5b") 5b
-							option(value="5c") 5c
-							option(value="6a") 6a
-							option(value="6b") 6b
-							option(value="6c") 6c
+							- for (var k in alleKlassen)
+									if alleKlassen[k] == aktKl
+										option(value=alleKlassen[k] selected)
+											=alleKlassen[k]
+									else
+										option(value=alleKlassen[k])
+											=alleKlassen[k]
 			tr
 				td
 					h3 Aktive Aufgabe:
 				td
 					select(name="aufgabe")
 						- for (var i in alleAufgaben)
-								option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename, name="aufgabe")
-									=alleAufgaben[i].aufgabe.title
-		input(type="submit" class="button large expanded" value="Konfiguration speichern")
+								if alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename == aktAufg
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename selected name="aufgabe")
+										=alleAufgaben[i].aufgabe.title
+								else
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename name="aufgabe")
+										=alleAufgaben[i].aufgabe.title
+		input(type="submit" class="button large expanded" value="Aufgabe für Klasse bereitstellen")

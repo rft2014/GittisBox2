@@ -6,7 +6,8 @@ var alleAufgaben = fs.readdirSync('./static/aufgaben/');
 var aufgabenText;
 var aktau = '';
 var aktuelleAufgabe = '';
-//var tasks = require('./static/aufgaben/mathe2.json')
+var aktuelleKlasse = '';
+
 
 module.exports = function(app, passport){
 	app.get('/', function(req, res){
@@ -33,10 +34,19 @@ module.exports = function(app, passport){
 	app.get('/admin_start', isLoggedInAsAdmin, function (req, res) {
 
 		var aufgList = [];
-		//var einzelAufgProps = [];
+		var aktuelleKlasse = '';
+		var aktuelleAufgabe = '';
 		var itemList = [];
 		var ausgabe = '';
 		var newItem = [];
+		var klassen = ['5a','5b','5c','6a','6b','6c'];
+		ConfigData.find({},'aktKlasse aktAufgabe',{lean:true},function(err, result){
+	if(err) throw err;
+	if(result){
+		aktuelleKlasse = result[0].aktKlasse;
+		aktuelleAufgabe = result[0].aktAufgabe;
+			}
+
 		for(var i=0; i<alleAufgaben.length;i++){
 			var aufgabe = JSON.parse(fs.readFileSync('./static/aufgaben/'+alleAufgaben[i]));
 			aufgList.push({aufgabe : {'path' : '/aufgaben/',
@@ -48,11 +58,16 @@ module.exports = function(app, passport){
 			itemList.push(ausgabe);
 			console.log('Ausgabe: '+ausgabe);
 			console.log('JSON-Obj: '+ JSON.stringify(aufgList));
+			console.log("aktuelle Klasse: " + aktuelleKlasse);
+				}
 
-
-		}
-			res.render('admin_start',{'alleAufgaben': aufgList});
-	});
+			res.render('admin_start',{'alleAufgaben': aufgList,
+																'aktKl': aktuelleKlasse,
+																'alleKlassen': klassen,
+																'aktAufg': aktuelleAufgabe
+															});
+													});
+											});
 
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
 
@@ -112,6 +127,11 @@ module.exports = function(app, passport){
 																});
 		});
 
+		app.get('/editor', isLoggedInAsAdmin, function(req,res){
+			res.render('editor', {title: 'Aufgaben bearbeiten',
+														});
+		});
+
 	app.post('/save', function(req,res){
 		console.log("Json-Daten: "+JSON.stringify(req.body));
 		var x = new Ergebnis({'antworten':req.body});
@@ -124,6 +144,10 @@ module.exports = function(app, passport){
 		});
 	})
 
+
+		app.post('/save-editor', function(req,res){
+			console.log('Editordaten: '+ JSON.stringify(req.body));
+		})
 	app.get('/logout', function (req, res) {
 		req.logout();
 		res.redirect('/');
@@ -159,7 +183,7 @@ module.exports = function(app, passport){
 			res.redirect('/admin?' + 'KL='+kl);
 		});
 
-		app.get('/ons',isLoggedInAsUser, function(req,res){
+		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 
 ConfigData.find({},'aktAufgabe',{lean:true},function(err,aktau){
 	if(err){console.log("Ich kann die aktuelle Aufgabe nicht finden")
@@ -168,7 +192,7 @@ ConfigData.find({},'aktAufgabe',{lean:true},function(err,aktau){
 			aktuelleAufgabe = aktau[0].aktAufgabe;
 			let tasks = require('./static'+aktuelleAufgabe);
 			console.log('Die aktuelle Aufgabe lautet: '+ aktuelleAufgabe + '   '+__filename)
-				res.render('mul1_ons',{	title : 'Leistungskontrolle',
+				res.render('mathe_1',{	title : 'Leistungskontrolle',
 									'firstname' : req.user.local.firstname,
 								 	'lastname' : req.user.local.lastname,
 								 	'user': req.user.local.username,
@@ -219,7 +243,7 @@ function aktuelleKlasse(){
 		console.log('Die aktuelle Klassssse ist: '+ result[0].aktKlasse);
 		aktuelleKlasse = result[0].aktKlasse;
 
-		return aktuelleKlasse;
+
 	}
 });
 
