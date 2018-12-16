@@ -1,0 +1,46 @@
+extends ./base
+
+html
+	head
+		title= title
+
+block content
+	form(action="/saveconfigdata" method="POST")
+		table
+			tr
+				td
+					h3 Aktive Klasse:
+				td(colspan='5')
+					select(name="klasse")
+							- for (var k in alleKlassen)
+									if alleKlassen[k] == aktKl
+										option(value=alleKlassen[k] selected)
+											=alleKlassen[k]
+									else
+										option(value=alleKlassen[k])
+											=alleKlassen[k]
+			tr
+				td
+					h3 Aktive Aufgabe:
+				td(colspan='5')
+					select(name="aufgabe")
+						- for (var i in alleAufgaben)
+								if alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename == aktAufg
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename selected name="aufgabe")
+										=alleAufgaben[i].aufgabe.title
+								else
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename name="aufgabe")
+										=alleAufgaben[i].aufgabe.title
+			tr
+				td
+					h3 zeitgesteuert:
+				td
+					if istZeitgest == 'on'
+						input(name='zeitgesteuert' id='zeitgesteuert' type='checkbox' checked)
+					else
+						input(name='zeitgesteuert' id='zeitgesteuert' type='checkbox')
+				td
+					input(name='zeit' id='zeit' type='number' value= '#{DauerAnzeige}')
+				td(colspan='3')
+					label(for='zeit') Anzeigedauer in s
+		input(type="submit" class="button large expanded" value="Aufgabe für Klasse bereitstellen")

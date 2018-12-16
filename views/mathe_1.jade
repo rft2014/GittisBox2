@@ -12,6 +12,8 @@ html
 		div#firstname #{firstname}
 		div#lastname #{lastname}
 		div#klasse #{klasse}
+		div#istZeitgest #{zeitgest}
+		div#anzeigedauer #{DauerAnzeige}
 		div#aufg_id #{aufgabenDaten.Aufgaben_id}
 		div#maxAufgabenAnzahl #{aufgabenDaten.Aufgaben.length}
 		ons-page
@@ -33,7 +35,7 @@ html
 				ons-carousel-item(style="background-color:#c0c0c0")
 						ons-card
 							h3 Hallo #{firstname}!
-							p Willkommen zu: #{aufgabenDaten.title}
+							p Willkommen zu: #{aufgabenDaten.title}&nbsp; #{aufgabenDaten.Aufgaben_id}
 							p Wenn du den Bildschirm nach links oder rechts wischst,
 								| kannst du durch die Aufgaben bl&auml;ttern. Trag die
 								| L&ouml;sungen ein. Wenn du dir sicher bist, alle Aufgaben

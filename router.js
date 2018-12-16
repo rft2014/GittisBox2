@@ -36,15 +36,19 @@ module.exports = function(app, passport){
 		var aufgList = [];
 		var aktuelleKlasse = '';
 		var aktuelleAufgabe = '';
+		var istZeitgesteuert = '';
+		var anzeigeDauer = 0;
 		var itemList = [];
 		var ausgabe = '';
 		var newItem = [];
-		var klassen = ['5a','5b','5c','6a','6b','6c'];
-		ConfigData.find({},'aktKlasse aktAufgabe',{lean:true},function(err, result){
+		var klassen = ['5a','5b','5c','6a','6b','6c','3c'];
+		ConfigData.find({},'aktKlasse aktAufgabe zeitgesteuert anzeigedauer',{lean:true},function(err, result){
 	if(err) throw err;
 	if(result){
 		aktuelleKlasse = result[0].aktKlasse;
 		aktuelleAufgabe = result[0].aktAufgabe;
+		istZeitgesteuert = result[0].zeitgesteuert;
+		anzeigeDauer = result[0].anzeigedauer;
 			}
 
 		for(var i=0; i<alleAufgaben.length;i++){
@@ -52,19 +56,24 @@ module.exports = function(app, passport){
 			aufgList.push({aufgabe : {'path' : '/aufgaben/',
 																'filename' : alleAufgaben[i],
 																'id'	:	aufgabe.Aufgaben_id,
-																'title' : aufgabe.title	}});
+																'title' : aufgabe.title,
+																'zeit_moeglich' : aufgabe.ZeitsteuerungMoeglich,
+															}});
 
 			ausgabe = aufgabe.title +' - '+aufgabe.Aufgaben_id;
 			itemList.push(ausgabe);
 			console.log('Ausgabe: '+ausgabe);
 			console.log('JSON-Obj: '+ JSON.stringify(aufgList));
 			console.log("aktuelle Klasse: " + aktuelleKlasse);
+
 				}
 
 			res.render('admin_start',{'alleAufgaben': aufgList,
 																'aktKl': aktuelleKlasse,
 																'alleKlassen': klassen,
-																'aktAufg': aktuelleAufgabe
+																'aktAufg': aktuelleAufgabe,
+																'istZeitgest': istZeitgesteuert,
+																'DauerAnzeige': anzeigeDauer,
 															});
 													});
 											});
@@ -77,6 +86,7 @@ module.exports = function(app, passport){
 		}
 			else{
 				res.render('admin',{AlleNoten:alleNoten, KL:req.query.KL});
+
 			}
 		});
 	});
@@ -131,6 +141,10 @@ module.exports = function(app, passport){
 			res.render('editor', {title: 'Aufgaben bearbeiten',
 														});
 		});
+		app.get('/mathe-editor', function(req,res){
+			res.render('mathe-editor', {title: 'Matheaufgaben entwickeln',
+														});
+		});
 
 	app.post('/save', function(req,res){
 		console.log("Json-Daten: "+JSON.stringify(req.body));
@@ -172,7 +186,9 @@ module.exports = function(app, passport){
 			console.log('akt Klasse: '+AktKlasse);
 			var kl = req.body.klasse;
 			var aa = req.body.aufgabe;
-			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aa} ,{upsert:true},function(err,numAffected){
+			var zg = req.body.zeitgesteuert;
+			var z  = req.body.zeit;
+			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aa, zeitgesteuert:zg,anzeigedauer:z} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
 			});
@@ -185,19 +201,24 @@ module.exports = function(app, passport){
 
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 
-ConfigData.find({},'aktAufgabe',{lean:true},function(err,aktau){
+ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer',{lean:true},function(err,aktau){
 	if(err){console.log("Ich kann die aktuelle Aufgabe nicht finden")
 	}
 		else{
 			aktuelleAufgabe = aktau[0].aktAufgabe;
+			let istZeitgesteuert = aktau[0].zeitgesteuert;
+			let anzeigedauer = aktau[0].anzeigedauer;
 			let tasks = require('./static'+aktuelleAufgabe);
-			console.log('Die aktuelle Aufgabe lautet: '+ aktuelleAufgabe + '   '+__filename)
+			console.log('Die aktuelle Aufgabe lautet: '+ aktuelleAufgabe + '   '+__filename);
+			console.log('Ob oder nicht '+istZeitgesteuert);
 				res.render('mathe_1',{	title : 'Leistungskontrolle',
 									'firstname' : req.user.local.firstname,
 								 	'lastname' : req.user.local.lastname,
 								 	'user': req.user.local.username,
 									'klasse': req.user.local.klasse,
-									aufgabenDaten: tasks,
+									'aufgabenDaten': tasks,
+									'zeitgest': istZeitgesteuert,
+									'DauerAnzeige': anzeigedauer,
 									});
 								}
 						});

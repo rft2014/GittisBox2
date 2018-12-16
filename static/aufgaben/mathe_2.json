@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
 	"title": "Mathe - DemoMix 2 verschiedener Aufgabentypen",
-	"description": "Aufgabe 1",
+	"description": "Aufgabe 2",
 	"klassenstufe": "5",
 	"Aufgabentyp": "mathe1",
-	"Aufgaben_id": "ma_00001",
+	"Aufgaben_id": "ma_00002",
 	"type": "object",
 	"properties": {
 		"id": {

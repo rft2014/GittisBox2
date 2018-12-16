@@ -1,0 +1,74 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Mathe - Einmaleins",
+	"description": "Aufgabe 2",
+	"klassenstufe": "3",
+	"Aufgabentyp": "mathe1",
+	"Aufgaben_id": "ma_00011",
+	"ZeitsteuerungMoeglich": "ja",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"aufgabe": {
+			"description": "Aufgabe",
+			"type": "string"
+		},
+		"ergebnis": {
+			"description": "Ergebnis",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"aufgabe":"`2*9`",
+		"ergebnis":"18"
+	},
+	{"id": 2,
+		"aufgabe":"`4*6`",
+		"ergebnis":"24"
+	},
+	{
+		"id": 3,
+		"aufgabe":"`9*7`",
+		"ergebnis":"63"
+	},
+{
+	 	"id": 4,
+		"aufgabe":"`3*2`",
+		"ergebnis":"6"
+	},
+{
+		"id": 5,
+		"aufgabe":"`3*4`",
+		"ergebnis":"12"
+	},
+{
+		"id": 6,
+		"aufgabe":"`5*8`",
+		"ergebnis":"40"
+	},
+{
+		"id": 7,
+		"aufgabe":"`6*6`",
+		"ergebnis":"36"
+	},
+{
+		"id": 8,
+		"aufgabe":"`9*9`",
+		"ergebnis":"81"
+	},
+{
+		"id": 9,
+		"aufgabe":"`8*8`",
+		"ergebnis":"64"
+	},
+{
+		"id": 10,
+		"aufgabe":"`4*4`",
+		"ergebnis":"16"
+	}
+]}

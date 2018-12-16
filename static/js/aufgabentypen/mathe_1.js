@@ -8,6 +8,9 @@ $(document).ready(function(){
 $("#user").hide();
 $("#maxAufgabenAnzahl").hide();
 $(".korrekteLoesung").hide();
+$("#istZeitgest").hide();
+$("#anzeigedauer").hide();
+
 
 anzeigeAufgabeInNav();
 //var aktAufg = $("#aufgabe").html();
@@ -123,6 +126,12 @@ function setzeFocus(){
 function kar_zurueck(){
 	document.getElementById("kar").prev();
 }
+
+$(document).ready(function(){
+	if($('#istZeitgest').text() == 'on'){
+	setInterval(function(){kar_weiter();}, $('#anzeigedauer').text()*1000)
+		}
+});
 
 function kar_weiter(){
 	document.getElementById("kar").next();

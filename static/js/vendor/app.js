@@ -31,3 +31,22 @@ function note(prozente){
     return note;
   }
 };
+
+function kloneKlasse(){
+        var itm = document.getElementById('neueMatheAufgabe_1');
+        var cln = itm.cloneNode(true);
+				//cln.addEventListener('click',alert('Trallala'));
+        document.getElementById('abc').appendChild(cln);
+				console.log('abc: '+document.getElementById('abc').firstChild.innerHTML)
+        var max = document.getElementsByClassName('grid-x grid-margin-x').length;
+				cln.id='neueMatheAufgabe_'+max;
+				cln.id='Hallotri';
+				console.log('Kinners: '+document.body.childNodes[1].textContent);
+				$('#lfdnr').html(max);
+        console.log('Anzahl Elemente im DOM: '+ max);
+    		for (let i=1;i<=max;i++){
+					//document.getElementById('lfdnr').innerHTML=i;
+					console.log('Ich lebe');
+				}
+
+        };

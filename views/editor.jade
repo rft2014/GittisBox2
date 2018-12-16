@@ -15,7 +15,7 @@ block content
     button#begin_aufzaehlung Beginn Aufz&auml;hlung
     button#end_aufzaehlung Ende Aufz&auml;hlung
   div#editor
-    p Hallo Ihr da
+    p Das Leben bringt grosse Freud, das wissen alle Leut.
   button(type='button' id='saveDelta' class='success button') L&uuml;ckentextaufgabe speichern
   script.
     var delta;
@@ -25,7 +25,17 @@ block content
       });
     $('#saveDelta').click(function(){
       delta = editor.getContents();
-      console.log(delta.ops[2].insert);
+      //console.log(delta.ops[4].insert);
+      console.log(delta.ops);
+      delta.push({loesungswoerter:[]})
+      
+      for(let i = 0;i<delta.ops.length; i++){
+        if(delta.ops[i].insert == '<Start Lücke>'){
+          console.log(delta.ops[i+1].insert);
+          //console.log('im array: '+delta.ops[5].loesungswoerter[0])
+          delta.ops[delta.ops.length-1].loesungswoerter.push(delta.ops[i+1].insert);
+        }
+      }
       sendData();
     });
     function sendData(){

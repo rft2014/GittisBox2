@@ -6,12 +6,14 @@ html
 
 block content
 	form(action="/saveconfigdata" method="POST")
-		table
-			tr
-				td
-					h3 Aktive Klasse:
-					td
-						select(name="klasse")
+		div.grid-container
+			div(class='grid-x grid-margin-x align-middle')
+				div(class="cell")
+					h1 Aktuelle Aufgabenstellung
+				div(class="cell small-5 ")
+					h5 Klasse:
+				div(class="cell small-7 ")
+					select(name="klasse")
 							- for (var k in alleKlassen)
 									if alleKlassen[k] == aktKl
 										option(value=alleKlassen[k] selected)
@@ -19,16 +21,41 @@ block content
 									else
 										option(value=alleKlassen[k])
 											=alleKlassen[k]
-			tr
-				td
-					h3 Aktive Aufgabe:
-				td
-					select(name="aufgabe")
+			div(class='grid-x grid-margin-x align-middle')
+				div(class="cell small-5")
+					h6 Aufgabe:
+				div(class="cell small-7")
+					select(name="aufgabe" id='aufgabe')
 						- for (var i in alleAufgaben)
 								if alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename == aktAufg
-									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename selected name="aufgabe")
-										=alleAufgaben[i].aufgabe.title
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename selected name="aufgabe" index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
+										=alleAufgaben[i].aufgabe.title +' '+alleAufgaben[i].aufgabe.id
 								else
-									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename name="aufgabe")
-										=alleAufgaben[i].aufgabe.title
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename  name="aufgabe" index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
+										=alleAufgaben[i].aufgabe.title +' '+alleAufgaben[i].aufgabe.id
+			div(class='grid-x grid-margin-x align-middle' id='zeitsteuerung')
+				div(class="cell small-4")
+					h6 zeitgesteuert:
+				div(class="cell small-1")
+					if istZeitgest == 'on'
+						input(name='zeitgesteuert' id='zeitgesteuert' type='checkbox' checked)
+					else
+						input(name='zeitgesteuert' id='zeitgesteuert' type='checkbox')
+				div(class="cell small-2")
+					input(name='zeit' id='zeit' type='number' value= '#{DauerAnzeige}')
+				div(class="cell small-5")
+					label(for='zeit') Anzeigedauer in s
 		input(type="submit" class="button large expanded" value="Aufgabe für Klasse bereitstellen")
+
+		script.
+				$('#aufgabe').change(function(){
+				let id = $('#aufgabe option:selected').attr('index');
+				let zg = $('#aufgabe option:selected').attr('timer');
+				if(zg !== 'ja'){
+					$('#zeitsteuerung').hide();
+					}else{
+					$('#zeitsteuerung').show();
+					}
+
+
+				});

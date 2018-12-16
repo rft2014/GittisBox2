@@ -1,0 +1,28 @@
+extends ./base
+
+html
+  head
+    title= title
+    block extrajs
+      script(type="text/javascript" async src="/js/MathJax/MathJax.js?config=AM_CHTML")
+block content
+  h5 Erstelle hier neue Aufgaben
+  div#xyz
+    div.grid-container#abc
+      div(class='grid-x grid-margin-x' id='neueMatheAufgabe_1')
+        div(class="cell small-1 medium-1 large-1" id='lfdnr') 1
+        div(class="cell small-3 medium-3 large-3" id="eingabe")
+          input(type='text' placeholder='aufgabe' id="eingabe_1")
+        div(class='cell small-3 medium-3 large-3')
+          callout(id='ausgabe_1')
+        div(class='cell small-3 medium-3 large-3')
+          input(type='text' placeholder='loesung')
+        div(class='cell small-1 medium-1 large-1')
+          i(class='fi-plus' onclick='kloneKlasse()')
+        div(class='cell small-1 medium-1 large-1')
+          i.fi-x
+      script.
+        eingabe_1.oninput = function(){
+        $('#ausgabe_1').html('`' + $('#eingabe_1').val() + '`');
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,"ausgabe_1"]);
+          };
