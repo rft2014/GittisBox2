@@ -1,0 +1,123 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Mathe - 17.12.2018",
+	"description": "Aufgabe 3",
+	"klassenstufe": "3",
+	"Aufgabentyp": "mathe1",
+	"Aufgaben_id": "ma_00012",
+	"ZeitsteuerungMoeglich": "ja",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"aufgabe": {
+			"description": "Aufgabe",
+			"type": "string"
+		},
+		"ergebnis": {
+			"description": "Ergebnis",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"aufgabe":"`3*7`",
+		"ergebnis":"21"
+	},
+	{"id": 2,
+		"aufgabe":"`4*9`",
+		"ergebnis":"36"
+	},
+	{
+		"id": 3,
+		"aufgabe":"`19+27`",
+		"ergebnis":"46"
+	},
+{
+	 	"id": 4,
+		"aufgabe":"`7*8`",
+		"ergebnis":"56"
+	},
+{
+		"id": 5,
+		"aufgabe":"`23-14`",
+		"ergebnis":"9"
+	},
+{
+		"id": 6,
+		"aufgabe":"`5*8+6`",
+		"ergebnis":"46"
+	},
+{
+		"id": 7,
+		"aufgabe":"`6*6-6`",
+		"ergebnis":"30"
+	},
+{
+		"id": 8,
+		"aufgabe":"`19+9`",
+		"ergebnis":"28"
+	},
+{
+		"id": 9,
+		"aufgabe":"`4*8`",
+		"ergebnis":"32"
+	},
+{
+		"id": 10,
+		"aufgabe":"`4*7`",
+		"ergebnis":"28"
+	},
+{
+		"id": 11,
+		"aufgabe":"`13+7*2`",
+		"ergebnis":"27"
+	},
+	{"id": 12,
+		"aufgabe":"`3*5`",
+		"ergebnis":"15"
+	},
+	{
+		"id": 13,
+		"aufgabe":"`29+37`",
+		"ergebnis":"66"
+	},
+{
+	 	"id": 14,
+		"aufgabe":"`7*8+14`",
+		"ergebnis":"70"
+	},
+{
+		"id": 15,
+		"aufgabe":"`43-13`",
+		"ergebnis":"30"
+	},
+{
+		"id": 16,
+		"aufgabe":"`2*8+4`",
+		"ergebnis":"20"
+	},
+{
+		"id": 17,
+		"aufgabe":"`16+6-5`",
+		"ergebnis":"17"
+	},
+{
+		"id": 18,
+		"aufgabe":"`39+19`",
+		"ergebnis":"58"
+	},
+{
+		"id": 19,
+		"aufgabe":"`4*8-2`",
+		"ergebnis":"30"
+	},
+{
+		"id": 20,
+		"aufgabe":"`4*7-18`",
+		"ergebnis":"10"
+	}
+]}
