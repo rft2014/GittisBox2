@@ -8,7 +8,7 @@ $(document).ready(function(){
 $("#user").hide();
 $("#maxAufgabenAnzahl").hide();
 $(".korrekteLoesung").hide();
-//$("#loesungsfeld").hide();
+$("#loesungsfeld").hide();
 $("#istZeitgest").hide();
 $("#anzeigedauer").hide();
 
@@ -121,6 +121,7 @@ function setzeFocus(){
 	let indexActiveItem = document.querySelector('ons-carousel').getActiveIndex();
 	if(indexActiveItem > 0 && indexActiveItem <= maxAufgaben){
 	document.getElementById('ergebnis_'+(indexActiveItem - 1))._input.focus();
+	
 	}
 }
 

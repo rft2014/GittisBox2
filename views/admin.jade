@@ -5,12 +5,13 @@ html
 		title= title
 
 block content
-	h3 Ergebnisse f&uuml;r Klasse:&nbsp;#{KL}		
+	h3 Ergebnisse f&uuml;r Klasse:&nbsp;#{KL}
 	table
 		each note in AlleNoten
 			tr
 				td #{note.antworten.firstname}
 				td #{note.antworten.lastname}
 				td #{note.antworten.klasse}
+				td #{note.antworten.Aufgaben_ID}
 				td #{note.antworten.Note}
 	a(href='/logout' class='button expanded') Ausloggen
