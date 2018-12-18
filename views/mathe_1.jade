@@ -49,8 +49,8 @@ html
 						ons-card(id='aufgabenStellung')
 							p.formel #{aufgabenDaten.Aufgaben[i].aufgabe}
 							div(id="korrekteLoesung"+i class="korrekteLoesung") #{aufgabenDaten.Aufgaben[i].ergebnis}
-						ons-card
-							ons-input(class='loesung' id='ergebnis_'+i type='text' modifier='underbar')
+						ons-card#loesungsfeld
+							ons-input(class='loesung' id='ergebnis_'+i type='number' modifier='underbar')
 				ons-carousel-item(style="background-color:#c0c0c0")
 						ons-card Das wars
 						ons-bottom-toolbar

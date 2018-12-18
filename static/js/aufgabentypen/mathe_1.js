@@ -8,6 +8,7 @@ $(document).ready(function(){
 $("#user").hide();
 $("#maxAufgabenAnzahl").hide();
 $(".korrekteLoesung").hide();
+//$("#loesungsfeld").hide();
 $("#istZeitgest").hide();
 $("#anzeigedauer").hide();
 
