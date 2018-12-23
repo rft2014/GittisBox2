@@ -58,3 +58,14 @@
   margin-right:15px;
   margin-bottom: 10px;
 }
+.alignleft {
+  float:left;
+  font-weight: bold;
+  font-size: 24px;
+
+}
+.alignright {
+  float:right;
+  font-weight: bold;
+  font-size: 24px;
+}

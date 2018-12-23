@@ -7,11 +7,19 @@ html
 block content
 	h3 Ergebnisse f&uuml;r Klasse:&nbsp;#{KL}
 	table
+	- let i = 0;
 		each note in AlleNoten
-			tr
-				td #{note.antworten.firstname}
-				td #{note.antworten.lastname}
-				td #{note.antworten.klasse}
-				td #{note.antworten.Aufgaben_ID}
-				td #{note.antworten.Note}
+			- i++;
+			div.row
+				div(class='callout success')
+					p.alignleft #{i}. #{note.antworten.firstname} #{note.antworten.lastname}
+					p(class='alignright') Note: #{note.antworten.Note}
+					div(style='clear: both;')
+					h4 Abgegeben: #{note.antworten.Abgegeben}
+					h4 #{note.antworten.Aufgaben_ID}
+					div(class='expanded button-group')
+						a(class='button success') L&ouml;schen
+						a(class='button alert') Speichern
+
+
 	a(href='/logout' class='button expanded') Ausloggen

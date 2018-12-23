@@ -1,0 +1,29 @@
+* Hallo Welt
+* Und weiter +
+"wieso" +
+
+WARNING: Das Leben ist schoen
+
+NOTE: Hallo Welt
+
+IMPORTANT: Es sind Ferien
+
+CAUTION: Na sowas
+
+[TIP]
+.Aufgepasst!
+====
+Obwohl es alle wissen sollten:
+
+* Im Winter ist es kalt und deshalb warm Anziehen.
+* Im Sommer nicht
+====
+
+[.lead]
+Dies ist spezieller text
+
+= Dies ist der Titel
+:toc:
+:imagesdir: assets/images
+:homepage: http://www.open-source-first.de
+Hier geht der Text weiter

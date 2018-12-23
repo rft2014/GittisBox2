@@ -12,7 +12,7 @@ var antwortenSchema = new mongoose.Schema({
   lastname: String,
   klasse: String,
   Aufgaben_ID: String,
-  Abgegeben: Date,
+  Abgegeben: String,
   Korrekt: String,
   Note: String,
   Antwort: [antwortSchema],

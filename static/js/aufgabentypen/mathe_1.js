@@ -8,11 +8,11 @@ $(document).ready(function(){
 $("#user").hide();
 $("#maxAufgabenAnzahl").hide();
 $(".korrekteLoesung").hide();
-$("#loesungsfeld").hide();
+//$("#loesungsfeld").hide();
 $("#istZeitgest").hide();
 $("#anzeigedauer").hide();
 
-
+var today = new Date();
 anzeigeAufgabeInNav();
 //var aktAufg = $("#aufgabe").html();
 //$.getJSON(aktAufg, function(aufgaben){
@@ -24,7 +24,8 @@ anzeigeAufgabeInNav();
 	//jsonAufgabenGlobal = aufgaben;
 	//aufgID = aufgaben.Aufgaben_id;
 	antworten.user = $("#user").html();
-	antworten.Abgegeben = Date.now();
+	//antworten.Abgegeben = Date.now();
+	antworten.Abgegeben = today.toLocaleString('de-DE');
 	antworten.Aufgaben_ID = $("#aufg_id").text();
 	antworten.firstname = $("#firstname").text();
 	antworten.lastname = $("#lastname").text();
@@ -121,7 +122,7 @@ function setzeFocus(){
 	let indexActiveItem = document.querySelector('ons-carousel').getActiveIndex();
 	if(indexActiveItem > 0 && indexActiveItem <= maxAufgaben){
 	document.getElementById('ergebnis_'+(indexActiveItem - 1))._input.focus();
-	
+
 	}
 }
 
