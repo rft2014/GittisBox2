@@ -30,6 +30,7 @@ anzeigeAufgabeInNav();
 	antworten.firstname = $("#firstname").text();
 	antworten.lastname = $("#lastname").text();
 	antworten.klasse = $("#klasse").text().trim();
+	antworten.insNotenbuch = false;
 
 
   document.querySelector('ons-carousel').addEventListener('postchange', function(){
@@ -68,9 +69,7 @@ function loesung_abgeben(){
 	let korrekteAntworten = 0;
 
 	for(var i = 0; i < maxAufgaben; i++){
-		//antworten.Antwort.push({"ergebnis":document.getElementsByClassName('loesung')[i].value
-		//"korrekt": (JSON.parse(localStorage.getItem(aufgID+"_"+i+"_korrekt"))
-	//});
+
 		if(antworten.Antwort[i].korrekt){
 			korrekteAntworten += 1;
 		}

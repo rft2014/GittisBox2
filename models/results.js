@@ -15,6 +15,7 @@ var antwortenSchema = new mongoose.Schema({
   Abgegeben: String,
   Korrekt: String,
   Note: String,
+  insNotenbuch: Boolean,
   Antwort: [antwortSchema],
   }
 });

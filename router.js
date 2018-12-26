@@ -81,7 +81,7 @@ module.exports = function(app, passport){
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
 
 		console.log('schritt 1, aktuelle Klasse: '+ req.query.KL);
-		Ergebnis.find({'antworten.klasse':req.query.KL}, function(err, alleNoten){
+		Ergebnis.find({'antworten.klasse':req.query.KL, 'antworten.insNotenbuch':'false'}, function(err, alleNoten){
 		if (err) {console.log('keine Noten vorhanden');
 		}
 			else{
@@ -153,10 +153,57 @@ module.exports = function(app, passport){
 		x.save(function(err, result){
 			if(err) throw err;
 			if(result){
-				console.log('Aus Zeile 102: '+result);
+				console.log('Aus Zeile 156: '+result);
 			}
 		});
 	})
+//////////////////////////////////////////////////////////////////////////////
+///					Loeschen der Ergebnisse von Leistungskonrollen								////
+///																																				////
+//////////////////////////////////////////////////////////////////////////////
+	app.get('/loeschen', function(req, res){
+		let aktuelleKlasse = '';
+		console.log("zu loeschendes Object: "+ req.query.ObjID);
+		ConfigData.find({},'aktKlasse',{lean:true},function(err, result){
+	if(err) throw err;
+	if(result){
+		aktuelleKlasse = result[0].aktKlasse;
+		}
+		Ergebnis.findByIdAndDelete(req.query.ObjID, function(err, ergebnis){
+			console.log('geloescht wird: '+ ergebnis);
+		});
+		res.redirect('/admin?KL='+aktuelleKlasse);
+		});
+	});
+
+///////////////////////////////////////////////////////////////////////////////
+/////			Uebernehmen der Noten ins Notenbuch															/////
+///////////////////////////////////////////////////////////////////////////////
+app.get('/ins_notenbuch', function(req,res){
+	let aktuelleKlasse = '';
+		console.log("zu uebernehmendes Object: "+ req.query.ObjID);
+		ConfigData.find({},'aktKlasse',{lean:true},function(err, result){
+	if(err) throw err;
+	if(result){
+		aktuelleKlasse = result[0].aktKlasse;
+		}
+		Ergebnis.findByIdAndUpdate(req.query.ObjID,{$set:{'antworten.insNotenbuch':'true'}}, function(err, ergebnis){
+			if(err)throw err;
+			if(ergebnis){
+			console.log('gespeichert wird: '+ ergebnis);
+		}
+		});
+		res.redirect('/admin?KL='+aktuelleKlasse);
+		});
+});
+///////////////////////////////////////////////////////////////////////////////
+//////         Das Notenbuch																						///////
+///////////////////////////////////////////////////////////////////////////////
+
+app.get('/notenbuch', function(req, res){
+		res.render('notenbuch',{title:'Notenbuch'});
+
+});
 
 
 		app.post('/save-editor', function(req,res){

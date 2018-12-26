@@ -12,14 +12,15 @@ block content
 			- i++;
 			div.row
 				div(class='callout success')
-					p.alignleft #{i}. #{note.antworten.firstname} #{note.antworten.lastname}
-					p(class='alignright') Note: #{note.antworten.Note}
-					div(style='clear: both;')
-					h4 Abgegeben: #{note.antworten.Abgegeben}
-					h4 #{note.antworten.Aufgaben_ID}
-					div(class='expanded button-group')
-						a(class='button success') L&ouml;schen
-						a(class='button alert') Speichern
+					form(action='/loeschen' method='GET' name='ObjID')
+						p.alignleft #{i}. #{note.antworten.firstname} #{note.antworten.lastname}
+						p(class='alignright') Note: #{note.antworten.Note}
+						div(style='clear: both;')
+						h4 Abgegeben: #{note.antworten.Abgegeben}
+						h4 #{note.antworten.Aufgaben_ID}
+						div(class='expanded button-group')
+							a(href='/loeschen?ObjID=#{note.id}' onclick="return confirm('Wirklich die Note von #{note.antworten.firstname} #{note.antworten.lastname} löschen?')"  class='button alert') L&ouml;schen
+							a(href='/ins_notenbuch?ObjID=#{note.id}' onclick="return confirm('Wirklich die Note von #{note.antworten.firstname} #{note.antworten.lastname} ins Notenbuch übertragen?')"  class='button success') Ins Notenbuch
 
 
 	a(href='/logout' class='button expanded') Ausloggen
