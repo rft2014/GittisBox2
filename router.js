@@ -206,13 +206,17 @@ app.get('/ins_notenbuch', function(req,res){
 ///////////////////////////////////////////////////////////////////////////////
 
 app.get('/notenbuch', function(req, res){
-	User.find({'local.klasse':'6a'},'local.firstname local.lastname',{lean:true},function(err,schueler){
-	if(err){throw err;
+	User.find({'local.klasse':req.query.KL},'local.firstname local.lastname',{lean:true},function(error,schueler,next){
+	//if(error.name === 'TypeError'){
+	//	next(new Error('Klasse nicht da'));
+if(error){console.log('Keine Daten da');
 	}
-		else{console.log('schoeler: '+schueler[0].local.firstname +' '+ schueler[0].local.lastname)};
+		else{console.log('Abfrage hat stattgefunden');	};
 	//});
 		res.render('notenbuch',{title:'Notenbuch',
 														schueler:schueler,
+														KL:req.query.KL,//aktuelle Klasse
+														F:req.query.F, //aktuelles Fach
 														});
 													}).sort({'local.lastname':1});
 		Ergebnis.distinct('antworten.Aufgaben_ID',{'antworten.klasse':'5a'},function(err, xyz ){
@@ -242,7 +246,11 @@ app.get('/notenbuch', function(req, res){
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
+///////////////////////////////////////////////////////////////////////////////
+////////																																///////
+////////				Speicherung der Configdaten bei Bereitstellung					///////
+////////				der Aufgaben fuer schueler															///////
+///////////////////////////////////////////////////////////////////////////////
 		app.post('/saveconfigdata', function(req,res){
 			console.log('Jetzt werden die configdaten gespeichert');
 			var AktKlasse = new ConfigData({aktKlasse:req.body.klasse});
@@ -258,6 +266,24 @@ app.get('/notenbuch', function(req, res){
 			});
 			res.redirect('/admin?' + 'KL='+kl);
 		});
+
+////////////////////////////////////////////////////////////////////////////////
+////////				Speicherug ausgewaehlter Configdaten (Klasse, Fach)		//////////
+////////				bei Aufruf Notenbuch																	//////////
+////////////////////////////////////////////////////////////////////////////////
+
+app.post('/saveconfigdata_part', function(req,res){
+			var AktKlasse = new ConfigData({aktKlasse:req.body.klasse});
+			var kl = req.body.klasse;
+			var f  = req.body.fach;
+			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktFach:f} ,{upsert:true},function(err,numAffected){
+				if(err)throw err;
+				if(numAffected){}
+			});
+			res.redirect('/notenbuch?'+'KL='+kl+'&F='+f);
+		});
+
+////////////////////////////////////////////////////////////////////////////////
 
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 

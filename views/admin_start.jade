@@ -57,8 +57,8 @@ block content
 					input(name='zeit' id='zeit' type='number' value= '#{DauerAnzeige}')
 				div(class="cell small-5")
 					label(for='zeit') Anzeigedauer in s
-		input(type="submit" class="button large expanded" value="Aufgabe für Klasse bereitstellen")
-		a(href='/notenbuch' class='button large expanded') Zum Notenbuch
+		button(type="submit" class="button large expanded") Aufgabe für Klasse bereitstellen
+		button(type='submit' class='button large expanded' formaction='/saveconfigdata_part' value='Zum Notenbuch') Zum Notenbuch
 		a(href='/logout' class='button expanded warning') Ausloggen
 
 		script.
