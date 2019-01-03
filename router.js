@@ -42,10 +42,12 @@ module.exports = function(app, passport){
 		var ausgabe = '';
 		var newItem = [];
 		var klassen = ['5a','5b','5c','6a','6b','6c','3c'];
-		ConfigData.find({},'aktKlasse aktAufgabe zeitgesteuert anzeigedauer',{lean:true},function(err, result){
+		var faecher = ['MNT', 'Geo', 'De', 'Ma']
+		ConfigData.find({},'aktKlasse aktAufgabe zeitgesteuert anzeigedauer aktFach',{lean:true},function(err, result){
 	if(err) throw err;
 	if(result){
 		aktuelleKlasse = result[0].aktKlasse;
+		aktuellesFach = result[0].aktFach;
 		aktuelleAufgabe = result[0].aktAufgabe;
 		istZeitgesteuert = result[0].zeitgesteuert;
 		anzeigeDauer = result[0].anzeigedauer;
@@ -74,6 +76,9 @@ module.exports = function(app, passport){
 																'aktAufg': aktuelleAufgabe,
 																'istZeitgest': istZeitgesteuert,
 																'DauerAnzeige': anzeigeDauer,
+																'title': ' Admin - Startmenü',
+																'aktFach': aktuellesFach,
+																'alleFaecher': faecher,
 															});
 													});
 											});
@@ -201,11 +206,22 @@ app.get('/ins_notenbuch', function(req,res){
 ///////////////////////////////////////////////////////////////////////////////
 
 app.get('/notenbuch', function(req, res){
-		res.render('notenbuch',{title:'Notenbuch'});
+	User.find({'local.klasse':'6a'},'local.firstname local.lastname',{lean:true},function(err,schueler){
+	if(err){throw err;
+	}
+		else{console.log('schoeler: '+schueler[0].local.firstname +' '+ schueler[0].local.lastname)};
+	//});
+		res.render('notenbuch',{title:'Notenbuch',
+														schueler:schueler,
+														});
+													}).sort({'local.lastname':1});
+		Ergebnis.distinct('antworten.Aufgaben_ID',{'antworten.klasse':'5a'},function(err, xyz ){
+			console.log('Hier kommts: '+xyz);
+		});
 
 });
 
-
+///////////////////////////////////////////////////////////////////////////////
 		app.post('/save-editor', function(req,res){
 			console.log('Editordaten: '+ JSON.stringify(req.body));
 		})
@@ -235,11 +251,8 @@ app.get('/notenbuch', function(req, res){
 			var aa = req.body.aufgabe;
 			var zg = req.body.zeitgesteuert;
 			var z  = req.body.zeit;
-			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aa, zeitgesteuert:zg,anzeigedauer:z} ,{upsert:true},function(err,numAffected){
-				if(err)throw err;
-				if(numAffected){}
-			});
-			ConfigData.updateOne({aktAufgabe :{$regex:/(json)/}}, {aktAufgabe:aa},{upsert:true}, function(err,numAffected){
+			var f  = req.body.fach;
+			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aa, zeitgesteuert:zg,anzeigedauer:z, aktFach:f} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
 			});

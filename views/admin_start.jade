@@ -9,9 +9,9 @@ block content
 		div.grid-container
 			div(class='grid-x grid-margin-x align-middle')
 				div(class="cell")
-					h1 Aktuelle Aufgabenstellung
+					h1 Startmen&uuml; - Administrator
 				div(class="cell small-5 ")
-					h5 Klasse:
+					h6 Klasse:
 				div(class="cell small-7 ")
 					select(name="klasse")
 							- for (var k in alleKlassen)
@@ -21,6 +21,18 @@ block content
 									else
 										option(value=alleKlassen[k])
 											=alleKlassen[k]
+			div(class='grid-x grid-margin-x align-middle')
+				div(class="cell small-5 ")
+					h6 Fach:
+				div(class="cell small-7 ")
+					select(name="fach")
+							- for (var f in alleFaecher)
+									if alleFaecher[f] == aktFach
+										option(value=alleFaecher[f] selected)
+											=alleFaecher[f]
+									else
+										option(value=alleFaecher[f])
+											=alleFaecher[f]
 			div(class='grid-x grid-margin-x align-middle')
 				div(class="cell small-5")
 					h6 Aufgabe:
@@ -47,6 +59,7 @@ block content
 					label(for='zeit') Anzeigedauer in s
 		input(type="submit" class="button large expanded" value="Aufgabe für Klasse bereitstellen")
 		a(href='/notenbuch' class='button large expanded') Zum Notenbuch
+		a(href='/logout' class='button expanded warning') Ausloggen
 
 		script.
 				$('#aufgabe').change(function(){
