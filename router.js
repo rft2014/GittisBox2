@@ -206,23 +206,24 @@ app.get('/ins_notenbuch', function(req,res){
 ///////////////////////////////////////////////////////////////////////////////
 
 app.get('/notenbuch', function(req, res){
-	User.find({'local.klasse':req.query.KL},'local.firstname local.lastname',{lean:true},function(error,schueler,next){
-	//if(error.name === 'TypeError'){
-	//	next(new Error('Klasse nicht da'));
-if(error){console.log('Keine Daten da');
-	}
-		else{console.log('Abfrage hat stattgefunden');	};
-	//});
-		res.render('notenbuch',{title:'Notenbuch',
+
+	Ergebnis.distinct('antworten.Aufgaben_ID',{'antworten.klasse':req.query.KL},
+			function(err, abgegebeneAufgabenDerKlasse ){
+
+	User.find({'local.klasse':req.query.KL},'local.firstname local.lastname',{lean:true},
+			function(err,schueler){
+				if(err){throw err;
+					}
+					else{console.log('Abfrage hat stattgefunden');
+							};
+	res.render('notenbuch',{title:'Notenbuch',
 														schueler:schueler,
 														KL:req.query.KL,//aktuelle Klasse
 														F:req.query.F, //aktuelles Fach
+														AUFG:abgegebeneAufgabenDerKlasse,
 														});
 													}).sort({'local.lastname':1});
-		Ergebnis.distinct('antworten.Aufgaben_ID',{'antworten.klasse':'5a'},function(err, xyz ){
-			console.log('Hier kommts: '+xyz);
-		});
-
+												});
 });
 
 ///////////////////////////////////////////////////////////////////////////////

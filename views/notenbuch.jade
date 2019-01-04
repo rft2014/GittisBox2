@@ -5,15 +5,22 @@ html
 		title= title
 
 block content
-	h1 Notenbuch Klasse: #{KL}&nbsp;&nbsp; Fach: #{F}
+	hr
+	h3 Notenbuch Klasse: #{KL}&nbsp;&nbsp; Fach: #{F}
+	hr
 	table-scroll
 		table
+			tr
+			th
+			- for (let h in AUFG)
+				th
+					= AUFG[h]
 			- for (let i in schueler)
 				tr
 					td
 						= schueler[i].local.lastname +', '+ schueler[i].local.firstname
-					- for(let j=0;j<20;j++)
-						td 1
+					- for(let j=0;j<2;j++)
+						td(align='center') 1
 
 	a(href='\admin_start' class='button secondary expanded') Hauptmen&uuml;
 	a(href='/logout' class='button expanded warning') Ausloggen
