@@ -5,22 +5,33 @@ html
 		title= title
 
 block content
+	div(id='antw' style='display:none') #{NOTEN}
 	hr
-	h3 Notenbuch Klasse: #{KL}&nbsp;&nbsp; Fach: #{F}
+	h2 Notenbuch Klasse: #{KL}&nbsp;&nbsp; Fach: #{F}
 	hr
 	table-scroll
 		table
-			tr
-			th
-			- for (let h in AUFG)
-				th
-					= AUFG[h]
-			- for (let i in schueler)
+			thead
 				tr
-					td
-						= schueler[i].local.lastname +', '+ schueler[i].local.firstname
-					- for(let j=0;j<2;j++)
-						td(align='center') 1
-
-	a(href='\admin_start' class='button secondary expanded') Hauptmen&uuml;
+					th
+						each aufg in AUFG
+							th=aufg
+			tbody
+				- for(let i in schueler)
+					tr
+						td=schueler[i].local.lastname + ', '+schueler[i].local.firstname
+						- for(var x in AUFG)
+							td(align='center' id='#{schueler[i].local.username}_#{AUFG[x]}')
+	a(href='\admin_start' class='button secondary expanded') Startmen&uuml; - Administrator
 	a(href='/logout' class='button expanded warning') Ausloggen
+
+
+		script.
+			var noten = $('#antw').html();
+			var json_noten = JSON.parse(noten);
+			//console.log(json_noten);
+			for(let i = 0;i<json_noten.length;i++){
+			let id = json_noten[i].antworten.user + '_' + json_noten[i].antworten.Aufgaben_ID;
+			//console.log(id);
+			$('#'+id).html(json_noten[i].antworten.Note);
+			}

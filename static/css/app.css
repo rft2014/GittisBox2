@@ -69,3 +69,6 @@
   font-weight: bold;
   font-size: 24px;
 }
+table thead th {
+  text-align:center;
+}

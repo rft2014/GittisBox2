@@ -186,18 +186,16 @@ module.exports = function(app, passport){
 ///////////////////////////////////////////////////////////////////////////////
 app.get('/ins_notenbuch', function(req,res){
 	let aktuelleKlasse = '';
-		console.log("zu uebernehmendes Object: "+ req.query.ObjID);
 		ConfigData.find({},'aktKlasse',{lean:true},function(err, result){
-	if(err) throw err;
-	if(result){
-		aktuelleKlasse = result[0].aktKlasse;
-		}
+			if(err) throw err;
+			if(result){
+				aktuelleKlasse = result[0].aktKlasse;
+				}
 		Ergebnis.findByIdAndUpdate(req.query.ObjID,{$set:{'antworten.insNotenbuch':'true'}}, function(err, ergebnis){
 			if(err)throw err;
 			if(ergebnis){
-			console.log('gespeichert wird: '+ ergebnis);
-		}
-		});
+				}
+			});
 		res.redirect('/admin?KL='+aktuelleKlasse);
 		});
 });
@@ -210,20 +208,31 @@ app.get('/notenbuch', function(req, res){
 	Ergebnis.distinct('antworten.Aufgaben_ID',{'antworten.klasse':req.query.KL},
 			function(err, abgegebeneAufgabenDerKlasse ){
 
-	User.find({'local.klasse':req.query.KL},'local.firstname local.lastname',{lean:true},
+	User.find({'local.klasse':req.query.KL},'local.firstname local.lastname local.username',{lean:true},
 			function(err,schueler){
 				if(err){throw err;
 					}
-					else{console.log('Abfrage hat stattgefunden');
-							};
+					else{};
+
+
+	Ergebnis.find({'antworten.klasse':req.query.KL}, 'antworten.Note antworten.user antworten.Aufgaben_ID',{lean:true},
+			function(err, noten){
+				if(err){throw err;
+				}
+				else{console.log('Noten: '+JSON.stringify(noten));}
+
+
 	res.render('notenbuch',{title:'Notenbuch',
 														schueler:schueler,
 														KL:req.query.KL,//aktuelle Klasse
 														F:req.query.F, //aktuelles Fach
 														AUFG:abgegebeneAufgabenDerKlasse,
+														NOTEN:JSON.stringify(noten),
+														NOOTEN:noten,
 														});
 													}).sort({'local.lastname':1});
 												});
+											});
 });
 
 ///////////////////////////////////////////////////////////////////////////////
