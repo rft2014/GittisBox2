@@ -230,8 +230,8 @@ app.get('/notenbuch', function(req, res){
 														NOTEN:JSON.stringify(noten),
 														NOOTEN:noten,
 														});
-													}).sort({'local.lastname':1});
-												});
+													});
+												}).sort({'local.lastname':1});
 											});
 });
 
