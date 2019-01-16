@@ -40,10 +40,10 @@ block content
 					select(name="aufgabe" id='aufgabe')
 						- for (var i in alleAufgaben)
 								if alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename == aktAufg
-									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename selected name="aufgabe" index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename+'|'+alleAufgaben[i].aufgabe.aufgabentyp name='aufgabe' selected  index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
 										=alleAufgaben[i].aufgabe.title +' '+alleAufgaben[i].aufgabe.id
 								else
-									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename  name="aufgabe" index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
+									option(value=alleAufgaben[i].aufgabe.path + alleAufgaben[i].aufgabe.filename+'|'+alleAufgaben[i].aufgabe.aufgabentyp name='aufgabe'  index=i timer=alleAufgaben[i].aufgabe.zeit_moeglich)
 										=alleAufgaben[i].aufgabe.title +' '+alleAufgaben[i].aufgabe.id
 			div(class='grid-x grid-margin-x align-middle' id='zeitsteuerung')
 				div(class="cell small-4")
@@ -63,7 +63,7 @@ block content
 
 		script.
 				$('#aufgabe').change(function(){
-				let id = $('#aufgabe option:selected').attr('index');
+				//let id = $('#aufgabe option:selected').attr('index');
 				let zg = $('#aufgabe option:selected').attr('timer');
 				if(zg !== 'ja'){
 					$('#zeitsteuerung').hide();

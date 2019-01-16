@@ -3,7 +3,8 @@
 	"title": "Mathe - DemoMix 3 verschiedener Aufgabentypen",
 	"description": "Aufgabe 3",
 	"klassenstufe": "5",
-	"Aufgabentyp": "mathe1",
+	"Fach": "Ma",
+	"Aufgabentyp": "mathe_1",
 	"Aufgaben_id": "ma_00003",
 	"type": "object",
 	"properties": {

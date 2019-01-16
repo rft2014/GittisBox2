@@ -72,3 +72,13 @@
 table thead th {
   text-align:center;
 }
+.geoImages {
+  display:block;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.option_1 {
+  text-align: center;
+  font-size: 25px;
+}

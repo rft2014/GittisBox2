@@ -60,6 +60,7 @@ module.exports = function(app, passport){
 																'id'	:	aufgabe.Aufgaben_id,
 																'title' : aufgabe.title,
 																'zeit_moeglich' : aufgabe.ZeitsteuerungMoeglich,
+																'aufgabentyp' :	aufgabe.Aufgabentyp,
 															}});
 
 			ausgabe = aufgabe.title +' - '+aufgabe.Aufgaben_id;
@@ -124,17 +125,23 @@ module.exports = function(app, passport){
 			console.log('Aktuelle Aufgabe: '+ aktuelleAufgabe);
 		});
 
-	app.get('/lk', isLoggedInAsUser, function (req, res) {
-		res.render('mul1',{	title : 'Leistungskontrolle',
-									'firstname' : req.user.local.firstname,
-								 	'lastname' : req.user.local.lastname,
-								 	'user': req.user.local.username,
-									'klasse': req.user.local.klasse,
-									'aufgabe': aktuelleAufgabe,
 
-									});
+////////////////////////////////////////////////////////////////////////////
+//wahrscheinlich loeschbar
+	//app.get('/lk', isLoggedInAsUser, function (req, res) {
+	//	res.render('mul1',{	title : 'Leistungskontrolle',
+	//								'firstname' : req.user.local.firstname,
+	//							 	'lastname' : req.user.local.lastname,
+	//							 	'user': req.user.local.username,
+	//								'klasse': req.user.local.klasse,
+	//								'aufgabe': aktuelleAufgabe,
+//
+	//								});
 
-		});
+		//});
+////////////////////////////////////////////////////////////////////////////
+
+
 		app.get('/lk_abgegeben', isLoggedInAsUser, function(req,res){
 			res.render('lk_abgegeben',{title: 'LK abgegeben',
 																	'firstname' : req.user.local.firstname,
@@ -228,7 +235,6 @@ app.get('/notenbuch', function(req, res){
 														F:req.query.F, //aktuelles Fach
 														AUFG:abgegebeneAufgabenDerKlasse,
 														NOTEN:JSON.stringify(noten),
-														NOOTEN:noten,
 														});
 													});
 												}).sort({'local.lastname':1});
@@ -270,7 +276,11 @@ app.get('/notenbuch', function(req, res){
 			var zg = req.body.zeitgesteuert;
 			var z  = req.body.zeit;
 			var f  = req.body.fach;
-			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aa, zeitgesteuert:zg,anzeigedauer:z, aktFach:f} ,{upsert:true},function(err,numAffected){
+			let position = aa.indexOf('|');
+			aauf = aa.slice(0,position);
+			var typ = aa.slice(position+1);
+
+			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aauf, zeitgesteuert:zg,anzeigedauer:z, aktFach:f, aktAufgabentyp:typ} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
 			});
@@ -296,25 +306,34 @@ app.post('/saveconfigdata_part', function(req,res){
 ////////////////////////////////////////////////////////////////////////////////
 
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
-
-ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer',{lean:true},function(err,aktau){
+			var arr = [];
+ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp',{lean:true},function(err,aktau){
 	if(err){console.log("Ich kann die aktuelle Aufgabe nicht finden")
 	}
 		else{
 			aktuelleAufgabe = aktau[0].aktAufgabe;
 			let istZeitgesteuert = aktau[0].zeitgesteuert;
 			let anzeigedauer = aktau[0].anzeigedauer;
+			let typ = aktau[0].aktAufgabentyp;
 			let tasks = require('./static'+aktuelleAufgabe);
-			console.log('Die aktuelle Aufgabe lautet: '+ aktuelleAufgabe + '   '+__filename);
-			console.log('Ob oder nicht '+istZeitgesteuert);
-				res.render('mathe_1',{	title : 'Leistungskontrolle',
+			//mischen der Option 2 fuer die select box
+			for(let i=0;i<tasks.Aufgaben.length;i++){
+				arr[i] = tasks.Aufgaben[i].option_2;
+				let randomIndex = Math.floor(Math.random()*(i+1));
+				let itemAtIndex = arr[randomIndex];
+				 arr[randomIndex] = arr[i];
+					arr[i]= itemAtIndex;
+			}
+				res.render(typ,{	title : 'Leistungskontrolle',
 									'firstname' : req.user.local.firstname,
 								 	'lastname' : req.user.local.lastname,
 								 	'user': req.user.local.username,
 									'klasse': req.user.local.klasse,
 									'aufgabenDaten': tasks,
+									'aufgabenDaten_json':JSON.stringify(tasks),
 									'zeitgest': istZeitgesteuert,
 									'DauerAnzeige': anzeigedauer,
+									'option_2_gemischt':arr,
 									});
 								}
 						});

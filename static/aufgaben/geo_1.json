@@ -1,0 +1,190 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Geo - Hauptstädte Europas ",
+	"description": "Europäische Länder zwischen dem 45. und 60. Breitengrad",
+	"klassenstufe": "6",
+	"Fach": "Geo",
+	"Aufgabentyp": "singleChoice",
+	"Aufgaben_id": "geo_00001",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "Land",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Hauptstadt",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"Island",
+		"option_2":"Reykjavik",
+		"image"		:"island.png"
+	},
+	{	"id": 2,
+		"option_1":"Norwegen",
+		"option_2":"Oslo",
+		"image"		:"norwegen.png"
+	},
+	{
+		"id": 3,
+		"option_1":"Schweden",
+		"option_2":"Stockholm",
+		"image"		:"schweden.png"
+	},
+{
+	 	"id": 4,
+		"option_1":"Finnland",
+		"option_2":"Helsinki",
+		"image"		:"finnland.png"
+	},
+{
+		"id": 5,
+		"option_1":"Russland",
+		"option_2":"Moskau",
+		"image"		:"russland.png"
+	},
+{
+		"id": 6,
+		"option_1":"Irland",
+		"option_2":"Dublin",
+		"image"		:"irland.png"
+	},
+{
+		"id": 7,
+		"option_1":"Vereinigtes Königreich Großbritannien",
+		"option_2":"London",
+		"image"		:"uk.png"
+	},
+{
+		"id": 8,
+		"option_1":"Dänemark",
+		"option_2":"Kopenhagen",
+		"image"		:"daenemark.png"
+	},
+{
+		"id": 9,
+		"option_1":"Estland",
+		"option_2":"Tallin",
+		"image"		:"estland.png"
+	},
+{
+		"id": 10,
+		"option_1":"Litauen",
+		"option_2":"Vilnius",
+		"image"		:"litauen.png"
+	},
+{
+		"id": 11,
+		"option_1":"Lettland",
+		"option_2":"Riga",
+		"image"		:"lettland.png"
+	},
+	{"id": 12,
+		"option_1":"Niederlande",
+		"option_2":"Amsterdam",
+		"image"		:"niederlande.png"
+	},
+	{
+		"id": 13,
+		"option_1":"Deutschland",
+		"option_2":"Berlin",
+		"image"		:"deutschland.png"
+	},
+{
+	 	"id": 14,
+		"option_1":"Polen",
+		"option_2":"Warschau",
+		"image"		:"polen.png"
+	},
+{
+		"id": 15,
+		"option_1":"Weißrussland",
+		"option_2":"Minsk",
+		"image"		:"weissrussland.png"
+	},
+{
+		"id": 16,
+		"option_1":"Ukraine",
+		"option_2":"Kiew",
+		"image"		:"ukraine.png"
+	},
+{
+		"id": 17,
+		"option_1":"Frankreich",
+		"option_2":"Paris",
+		"image"		:"frankreich.png"
+	},
+{
+		"id": 18,
+		"option_1":"Belgien",
+		"option_2":"Brüssel",
+		"image"		:"belgien.png"
+	},
+{
+		"id": 19,
+		"option_1":"Luxemburg",
+		"option_2":"Luxemburg",
+		"image"		:"luxemburg.png"
+	},
+{
+		"id": 20,
+		"option_1":"Schweiz",
+		"option_2":"Bern",
+		"image"		:"schweiz.png"
+	},
+	{
+	 	"id": 21,
+		"option_1":"Liechtenstein",
+		"option_2":"Vaduz",
+		"image"		:"liechtenstein.png"
+	},
+{
+		"id": 22,
+		"option_1":"Österreich",
+		"option_2":"Wien",
+		"image"		:"oesterreich.png"
+	},
+{
+		"id": 23,
+		"option_1":"Tschechische Republik",
+		"option_2":"Prag",
+		"image"		:"tschechien.png"
+	},
+{
+		"id": 24,
+		"option_1":"Slowakei",
+		"option_2":"Bratislava",
+		"image"		:"slowakei.png"
+	},
+{
+		"id": 25,
+		"option_1":"Slowenien",
+		"option_2":"Ljubljana",
+		"image"		:"slowenien.png"
+	},
+{
+		"id": 26,
+		"option_1":"Kroatien",
+		"option_2":"Zagreb",
+		"image"		:"kroatien.png"
+	},
+{
+		"id": 27,
+		"option_1":"Moldavien",
+		"option_2":"Kischinau",
+		"image"		:"moldavien.png"
+	}
+]}

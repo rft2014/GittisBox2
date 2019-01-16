@@ -29,6 +29,7 @@ app.use('/js', express.static(__dirname + '/static/js/vendor'));
 app.use('/css', express.static(__dirname + '/static/css'));
 app.use('/aufgaben', express.static(__dirname + '/static/aufgaben'));
 app.use('/aufgabentypen', express.static(__dirname + '/static/js/aufgabentypen'));
+app.use('/images', express.static(__dirname+ '/static/images'));
 app.set('view engine', 'jade');
 
 var store = new MongoDBStore({

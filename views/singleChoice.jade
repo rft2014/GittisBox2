@@ -1,0 +1,58 @@
+extends ./base_ons
+
+html
+	head
+		title : title
+		block extrajs
+			script(src='/aufgabentypen/singleChoice.js')
+			script(src='/js/app.js')
+	block content
+		div#user #{user}
+		div#firstname #{firstname}
+		div#lastname #{lastname}
+		div#klasse #{klasse}
+		div#aufg_id #{aufgabenDaten.Aufgaben_id}
+		div#maxAufgabenAnzahl #{aufgabenDaten.Aufgaben.length}
+		div#alleAufg #{aufgabenDaten_json}
+		ons-page
+			ons-toolbar
+				div.left
+					ons-toolbar-button(onclick='kar_zurueck()')
+						ons-icon(icon='md-chevron-left')
+				div.center
+					span#bezeichnung Aufgabe:&nbsp;
+					span#aktAufgabe
+					span#slash /
+					span#anzahlAufgaben #{aufgabenDaten.Aufgaben.length}
+				div.right
+					ons-toolbar-button(onclick='kar_weiter()')
+						ons-icon(icon='md-chevron-right')
+			ons-carousel#kar(fullscreen swipeable auto-scroll)
+				ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card
+							h3 Hallo #{firstname}!
+							p Willkommen zu: #{aufgabenDaten.title}&nbsp; #{aufgabenDaten.Aufgaben_id}
+							p Wenn du den Bildschirm nach links oder rechts wischst,
+								| kannst du durch die Aufgaben bl&auml;ttern. Trag die
+								| L&ouml;sungen ein. Wenn du dir sicher bist, alle Aufgaben
+								| gel&ouml;st zu haben, kannst du den Test auf der Seite nach
+								| der letzten Aufgabe abgeben.
+							p Ich w&uuml;nsche dir viel Erfolg!
+							p
+								a(href='/logout' class='alert button large expanded') Ausloggen
+				-	for(var i=0;i< aufgabenDaten.Aufgaben.length;i++)
+					ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card#option_
+							div.option_1 #{aufgabenDaten.Aufgaben[i].option_1}
+						ons-card#geoimage
+							img(src='/images/#{aufgabenDaten.Aufgaben[i].image}' class='geoImages')
+							//div(id="korrekteLoesung"+i class="korrekteLoesung") #{aufgabenDaten.Aufgaben[i].ergebnis}
+						ons-card#option_2
+							select(name="capital" id="capital_"+i)
+								-	for (var x in option_2_gemischt)
+										option(class='loesung' value=option_2_gemischt[x]) #{option_2_gemischt[x]}
+				ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card Das wars
+						ons-bottom-toolbar
+							section(style="padding:4px")
+								ons-button(modifier="large" id="btn_abgeben" onclick="loesung_abgeben()") Lösung abgeben

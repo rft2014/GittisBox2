@@ -33,5 +33,6 @@ block content
 			for(let i = 0;i<json_noten.length;i++){
 			let id = json_noten[i].antworten.user + '_' + json_noten[i].antworten.Aufgaben_ID;
 			//console.log(id);
-			$('#'+id).html(json_noten[i].antworten.Note);
+			//$('#'+id).html(json_noten[i].antworten.Note);
+			$('#'+id).append(json_noten[i].antworten.Note);
 			}
