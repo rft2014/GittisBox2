@@ -82,3 +82,6 @@ table thead th {
   text-align: center;
   font-size: 25px;
 }
+#antwortPruefung{
+  overflow-y:auto;
+}

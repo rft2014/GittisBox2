@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
 	"title": "Geo - Hauptstädte Europas ",
-	"description": "Europäische Länder zwischen dem 45. und 60. Breitengrad",
+	"description": "Hauptstädte der europäischen Länder zwischen dem 45. und 60. Breitengrad",
 	"klassenstufe": "6",
 	"Fach": "Geo",
 	"Aufgabentyp": "singleChoice",
@@ -159,7 +159,7 @@
 	},
 {
 		"id": 23,
-		"option_1":"Tschechische Republik",
+		"option_1":"Tschechien",
 		"option_2":"Prag",
 		"image"		:"tschechien.png"
 	},
@@ -186,5 +186,113 @@
 		"option_1":"Moldavien",
 		"option_2":"Kischinau",
 		"image"		:"moldavien.png"
+	},
+{
+	 	"id": 28,
+		"option_1":"Italien",
+		"option_2":"Rom",
+		"image"		:"italien.png"
+	},
+{
+		"id": 29,
+		"option_1":"Portugal",
+		"option_2":"Lissabon",
+		"image"		:"portugal.png"
+	},
+{
+		"id": 30,
+		"option_1":"Spanien",
+		"option_2":"Madrid",
+		"image"		:"spanien.png"
+	},
+{
+		"id": 31,
+		"option_1":"Albanien",
+		"option_2":"Tirana",
+		"image"		:"albanien.png"
+	},
+{
+		"id": 32,
+		"option_1":"Andorra",
+		"option_2":"Andorra la Vella",
+		"image"		:"andorra.png"
+	},
+{
+		"id": 33,
+		"option_1":"Bosnien und Herzegowina",
+		"option_2":"Sarajevo",
+		"image"		:"bosnienherzegowina.png"
+	},
+{
+		"id": 34,
+		"option_1":"Bulgarien",
+		"option_2":"Sofia",
+		"image"		:"bulgarien.png"
+	},
+{
+		"id": 35,
+		"option_1":"Griechenland",
+		"option_2":"Athen",
+		"image"		:"griechenland.png"
+	},
+{
+		"id": 36,
+		"option_1":"Kosovo",
+		"option_2":"Pristina",
+		"image"		:"kosovo.png"
+	},
+{
+		"id": 37,
+		"option_1":"Malta",
+		"option_2":"Valletta",
+		"image"		:"malta.png"
+	},
+{
+	 	"id": 38,
+		"option_1":"Mazedonien",
+		"option_2":"Skopje",
+		"image"		:"mazedonien.png"
+	},
+{
+		"id": 39,
+		"option_1":"Monaco",
+		"option_2":"Monaco",
+		"image"		:"monaco.png"
+	},
+{
+		"id": 40,
+		"option_1":"Montenegro",
+		"option_2":"Podgorica",
+		"image"		:"montenegro.png"
+	},
+{
+		"id": 41,
+		"option_1":"Rumänien",
+		"option_2":"Bukarest",
+		"image"		:"rumaenien.png"
+	},
+{
+		"id": 42,
+		"option_1":"San Marino",
+		"option_2":"San Marino",
+		"image"		:"sanmarino.png"
+	},
+{
+		"id": 43,
+		"option_1":"Serbien",
+		"option_2":"Belgrad",
+		"image"		:"serbien.png"
+	},
+{
+		"id": 44,
+		"option_1":"Ungarn",
+		"option_2":"Budapest",
+		"image"		:"ungarn.png"
+	},
+{
+		"id": 45,
+		"option_1":"Vatikanstadt",
+		"option_2":"Vatikanstadt",
+		"image"		:"vatikanstadt.png"
 	}
 ]}

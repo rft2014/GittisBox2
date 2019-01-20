@@ -6,6 +6,7 @@ var configDataSchema = new mongoose.Schema({
     anzeigedauer:Number,
     aktFach: String,
     aktAufgabentyp: String,
+    modus         : String,
   });
 
 

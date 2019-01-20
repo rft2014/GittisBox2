@@ -27,11 +27,11 @@ html
 				div.right
 					ons-toolbar-button(onclick='kar_weiter()')
 						ons-icon(icon='md-chevron-right')
-			ons-carousel#kar(fullscreen swipeable auto-scroll)
+			ons-carousel#kar(fullscreen swipeable auto-scroll auto-refresh)
 				ons-carousel-item(style="background-color:#c0c0c0")
 						ons-card
 							h3 Hallo #{firstname}!
-							p Willkommen zu: #{aufgabenDaten.title}&nbsp; #{aufgabenDaten.Aufgaben_id}
+							p Willkommen zu: #{aufgabenDaten.description}&nbsp; #{aufgabenDaten.Aufgaben_id}
 							p Wenn du den Bildschirm nach links oder rechts wischst,
 								| kannst du durch die Aufgaben bl&auml;ttern. Trag die
 								| L&ouml;sungen ein. Wenn du dir sicher bist, alle Aufgaben
@@ -48,6 +48,7 @@ html
 							img(src='/images/#{aufgabenDaten.Aufgaben[i].image}' class='geoImages')
 							//div(id="korrekteLoesung"+i class="korrekteLoesung") #{aufgabenDaten.Aufgaben[i].ergebnis}
 						ons-card#option_2
+							span Bitte w&auml;hle:&nbsp;&nbsp;
 							select(name="capital" id="capital_"+i)
 								-	for (var x in option_2_gemischt)
 										option(class='loesung' value=option_2_gemischt[x]) #{option_2_gemischt[x]}
@@ -55,4 +56,12 @@ html
 						ons-card Das wars
 						ons-bottom-toolbar
 							section(style="padding:4px")
-								ons-button(modifier="large" id="btn_abgeben" onclick="loesung_abgeben()") Lösung abgeben
+								if modus === 'pruefung'
+									ons-button(modifier="large" style='background-color: red;' id="btn_abgeben" onclick="loesung_abgeben()") Lösung abgeben
+								if modus === 'uebung'
+									ons-button(modifier="large" style='background-color: green;' id="btn_abgeben" onclick="antworten_pruefen()") Antworten prüfen
+				ons-carousel-item#antwortPruefung
+					ons-card
+						h3 #{aufgabenDaten.description}
+					ons-card#antwortTabelle
+					ons-button(onclick="logout()" modifier="large") Ausloggen

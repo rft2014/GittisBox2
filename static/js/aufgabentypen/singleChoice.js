@@ -88,8 +88,6 @@ function sendData(){
 	});
 }
 
-
-
 function anzeigeAufgabeInNav(){
 	let maxAufgaben = $("#maxAufgabenAnzahl").text();
 	let aufgIndex = document.querySelector('ons-carousel').getActiveIndex();
@@ -103,12 +101,17 @@ function anzeigeAufgabeInNav(){
 		$("#bezeichnung").html('Aufgabe&nbsp;');
 		$("#slash").html('/');
 		$("#anzahlAufgaben").html(maxAufgaben);
-	}else {
+	}else if ((aufgIndex > 0) && (aufgIndex == (parseInt(maxAufgaben) + 1))){
 		$("#aktAufgabe").html('');
 		$("#bezeichnung").html('L&ouml;sungen abgeben');
 		$("#slash").html('');
 		$("#anzahlAufgaben").html('');
-	}
+	}else{
+		$("#aktAufgabe").html('');
+		$("#bezeichnung").html('Auswertung');
+		$("#slash").html('');
+		$("#anzahlAufgaben").html('');
+  }
 }
 
 

@@ -57,19 +57,44 @@ block content
 					input(name='zeit' id='zeit' type='number' value= '#{DauerAnzeige}')
 				div(class="cell small-5")
 					label(for='zeit') Anzeigedauer in s
-		button(type="submit" class="button large expanded") Aufgabe für Klasse bereitstellen
-		button(type='submit' class='button large expanded' formaction='/saveconfigdata_part' value='Zum Notenbuch') Zum Notenbuch
-		a(href='/logout' class='button expanded warning') Ausloggen
+			div(class='grid-x grid-padding-x')
+					div(class='small-2 cell')
+					div(class='small-2 cell')
+						input(type="radio" name="uebungOderPruefung" value="uebung" id="uebung" class='xyz' required)
+					div(class='small-3 cell')
+						label(for="uebung") &Uuml;bung
+					div(class='small-2 cell')
+						input(type="radio" name="uebungOderPruefung" value="pruefung" id="pruefung" class='xyz')
+					div(class='small-3 cell')
+						label(for="pruefung") Pr&uuml;fung
+			button(type="submit" class="button large expanded" id='starteAufgabe') Bereitstellung der Aufgabe
+			button(type='submit' class='button large expanded' formaction='/saveconfigdata_part' value='Zum Notenbuch') Zum Notenbuch
+			a(href='/logout' class='button expanded warning') Ausloggen
 
 		script.
+				let zgst = $('#aufgabe option:selected').attr('timer');
+				if(zgst !== 'ja'){
+					$('#zeitsteuerung').hide();
+					}else{
+					$('#zeitsteuerung').show();
+					}
 				$('#aufgabe').change(function(){
 				//let id = $('#aufgabe option:selected').attr('index');
 				let zg = $('#aufgabe option:selected').attr('timer');
+				console.log('unne: '+zg);
 				if(zg !== 'ja'){
 					$('#zeitsteuerung').hide();
 					}else{
 					$('#zeitsteuerung').show();
 					}
-
-
 				});
+				$('.xyz').change(function(){
+				if($('#pruefung').is(':checked')){
+				$('#starteAufgabe').text('Aufgabe als Prüfung bereitstellen');
+				$('#starteAufgabe').css("background-color", 'red');
+				}if($('#uebung').is(':checked')){
+				$('#starteAufgabe').text('Aufgabe als Übung bereitstellen');
+				$('#starteAufgabe').css("background-color", 'green');
+				}
+				//$('#xbuttonx').text('Was anderes');
+				})

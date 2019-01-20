@@ -276,11 +276,13 @@ app.get('/notenbuch', function(req, res){
 			var zg = req.body.zeitgesteuert;
 			var z  = req.body.zeit;
 			var f  = req.body.fach;
+			var m  = req.body.uebungOderPruefung;
+
 			let position = aa.indexOf('|');
 			aauf = aa.slice(0,position);
 			var typ = aa.slice(position+1);
 
-			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aauf, zeitgesteuert:zg,anzeigedauer:z, aktFach:f, aktAufgabentyp:typ} ,{upsert:true},function(err,numAffected){
+			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktAufgabe:aauf, zeitgesteuert:zg,anzeigedauer:z, aktFach:f, aktAufgabentyp:typ, modus:m} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
 			});
@@ -307,7 +309,7 @@ app.post('/saveconfigdata_part', function(req,res){
 
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 			var arr = [];
-ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp',{lean:true},function(err,aktau){
+ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp modus',{lean:true},function(err,aktau){
 	if(err){console.log("Ich kann die aktuelle Aufgabe nicht finden")
 	}
 		else{
@@ -315,6 +317,7 @@ ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp',{lean:
 			let istZeitgesteuert = aktau[0].zeitgesteuert;
 			let anzeigedauer = aktau[0].anzeigedauer;
 			let typ = aktau[0].aktAufgabentyp;
+			let modus = aktau[0].modus;
 			let tasks = require('./static'+aktuelleAufgabe);
 			//mischen der Option 2 fuer die select box
 			for(let i=0;i<tasks.Aufgaben.length;i++){
@@ -334,6 +337,7 @@ ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp',{lean:
 									'zeitgest': istZeitgesteuert,
 									'DauerAnzeige': anzeigedauer,
 									'option_2_gemischt':arr,
+									'modus':modus,
 									});
 								}
 						});
