@@ -27,7 +27,7 @@ function note(prozente){
     return note;
   }
   if(prozente < 20){
-    note = 6;ons-icon(icon='md-chevron-right')
+    note = 6;
     return note;
   }
 };
