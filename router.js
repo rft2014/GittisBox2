@@ -55,6 +55,7 @@ module.exports = function(app, passport){
 
 		for(var i=0; i<alleAufgaben.length;i++){
 			var aufgabe = JSON.parse(fs.readFileSync('./static/aufgaben/'+alleAufgaben[i]));
+			if(aufgabe.Fach == aktuellesFach){
 			aufgList.push({aufgabe : {'path' : '/aufgaben/',
 																'filename' : alleAufgaben[i],
 																'id'	:	aufgabe.Aufgaben_id,
@@ -70,6 +71,7 @@ module.exports = function(app, passport){
 			console.log("aktuelle Klasse: " + aktuelleKlasse);
 
 				}
+			}
 
 			res.render('admin_start',{'alleAufgaben': aufgList,
 																'aktKl': aktuelleKlasse,

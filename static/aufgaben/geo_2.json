@@ -1,11 +1,11 @@
 {
 	"$schema": "http://json-schema.org/draft-06/schema#",
-	"title": "Geo -Alle Hauptstädte Europas ",
-	"description": "Hauptstädte aller europäischen Länder",
+	"title": "Geo - 27 Hauptstädte Europas ",
+	"description": "Hauptstädte von 27 europäischen Länder zwischen dem 80. und 45. Breitengrad",
 	"klassenstufe": "6",
 	"Fach": "Geo",
 	"Aufgabentyp": "singleChoice",
-	"Aufgaben_id": "geo_00001",
+	"Aufgaben_id": "geo_00002",
 	"ZeitsteuerungMoeglich": "nein",
 	"type": "object",
 	"properties": {
@@ -25,7 +25,6 @@
 			"filename": " ",
 			"type": "string"
 		}
-
 	},
 	"Aufgaben":[{
 		"id": 1,
@@ -33,12 +32,12 @@
 		"option_2":"Reykjavik",
 		"image"		:"island.png"
 	},
-	{	"id": 2,
+{		"id": 2,
 		"option_1":"Norwegen",
 		"option_2":"Oslo",
 		"image"		:"norwegen.png"
 	},
-	{
+{
 		"id": 3,
 		"option_1":"Schweden",
 		"option_2":"Stockholm",
@@ -92,12 +91,12 @@
 		"option_2":"Riga",
 		"image"		:"lettland.png"
 	},
-	{"id": 12,
+{		"id": 12,
 		"option_1":"Niederlande",
 		"option_2":"Amsterdam",
 		"image"		:"niederlande.png"
 	},
-	{
+{
 		"id": 13,
 		"option_1":"Deutschland",
 		"option_2":"Berlin",
@@ -186,113 +185,7 @@
 		"option_1":"Moldavien",
 		"option_2":"Kischinau",
 		"image"		:"moldavien.png"
-	},
-{
-	 	"id": 28,
-		"option_1":"Italien",
-		"option_2":"Rom",
-		"image"		:"italien.png"
-	},
-{
-		"id": 29,
-		"option_1":"Portugal",
-		"option_2":"Lissabon",
-		"image"		:"portugal.png"
-	},
-{
-		"id": 30,
-		"option_1":"Spanien",
-		"option_2":"Madrid",
-		"image"		:"spanien.png"
-	},
-{
-		"id": 31,
-		"option_1":"Albanien",
-		"option_2":"Tirana",
-		"image"		:"albanien.png"
-	},
-{
-		"id": 32,
-		"option_1":"Andorra",
-		"option_2":"Andorra la Vella",
-		"image"		:"andorra.png"
-	},
-{
-		"id": 33,
-		"option_1":"Bosnien und Herzegowina",
-		"option_2":"Sarajevo",
-		"image"		:"bosnienherzegowina.png"
-	},
-{
-		"id": 34,
-		"option_1":"Bulgarien",
-		"option_2":"Sofia",
-		"image"		:"bulgarien.png"
-	},
-{
-		"id": 35,
-		"option_1":"Griechenland",
-		"option_2":"Athen",
-		"image"		:"griechenland.png"
-	},
-{
-		"id": 36,
-		"option_1":"Kosovo",
-		"option_2":"Pristina",
-		"image"		:"kosovo.png"
-	},
-{
-		"id": 37,
-		"option_1":"Malta",
-		"option_2":"Valletta",
-		"image"		:"malta.png"
-	},
-{
-	 	"id": 38,
-		"option_1":"Mazedonien",
-		"option_2":"Skopje",
-		"image"		:"mazedonien.png"
-	},
-{
-		"id": 39,
-		"option_1":"Monaco",
-		"option_2":"Monaco",
-		"image"		:"monaco.png"
-	},
-{
-		"id": 40,
-		"option_1":"Montenegro",
-		"option_2":"Podgorica",
-		"image"		:"montenegro.png"
-	},
-{
-		"id": 41,
-		"option_1":"Rumänien",
-		"option_2":"Bukarest",
-		"image"		:"rumaenien.png"
-	},
-{
-		"id": 42,
-		"option_1":"San Marino",
-		"option_2":"San Marino",
-		"image"		:"sanmarino.png"
-	},
-{
-		"id": 43,
-		"option_1":"Serbien",
-		"option_2":"Belgrad",
-		"image"		:"serbien.png"
-	},
-{
-		"id": 44,
-		"option_1":"Ungarn",
-		"option_2":"Budapest",
-		"image"		:"ungarn.png"
-	},
-{
-		"id": 45,
-		"option_1":"Vatikanstadt",
-		"option_2":"Vatikanstadt",
-		"image"		:"vatikanstadt.png"
 	}
+
+
 ]}
