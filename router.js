@@ -1,8 +1,9 @@
+ var Controller = require('./controller/admin_start.controller');
 var User = require('./models/user');
 var Ergebnis = require('./models/results');
 var ConfigData = require('./models/configdata');
-var fs = require('fs');
-var alleAufgaben = fs.readdirSync('./static/aufgaben/');
+//var fs = require('fs');
+//var alleAufgaben = fs.readdirSync('./static/aufgaben/');
 var aufgabenText;
 var aktau = '';
 var aktuelleAufgabe = '';
@@ -30,61 +31,7 @@ module.exports = function(app, passport){
 		if (req.user.local.role === 'admin') {res.redirect('/admin_start');}
 		if (req.user.local.role === 'user') {res.redirect('/user');}
 	});
-
-	app.get('/admin_start', isLoggedInAsAdmin, function (req, res) {
-
-		var aufgList = [];
-		var aktuelleKlasse = '';
-		var aktuelleAufgabe = '';
-		var istZeitgesteuert = '';
-		var anzeigeDauer = 0;
-		var itemList = [];
-		var ausgabe = '';
-		var newItem = [];
-		var klassen = ['5a','5b','5c','6a','6b','6c','3c'];
-		var faecher = ['MNT', 'Geo', 'De', 'Ma']
-		ConfigData.find({},'aktKlasse aktAufgabe zeitgesteuert anzeigedauer aktFach',{lean:true},function(err, result){
-	if(err) throw err;
-	if(result){
-		aktuelleKlasse = result[0].aktKlasse;
-		aktuellesFach = result[0].aktFach;
-		aktuelleAufgabe = result[0].aktAufgabe;
-		istZeitgesteuert = result[0].zeitgesteuert;
-		anzeigeDauer = result[0].anzeigedauer;
-			}
-
-		for(var i=0; i<alleAufgaben.length;i++){
-			var aufgabe = JSON.parse(fs.readFileSync('./static/aufgaben/'+alleAufgaben[i]));
-			if(aufgabe.Fach == aktuellesFach){
-			aufgList.push({aufgabe : {'path' : '/aufgaben/',
-																'filename' : alleAufgaben[i],
-																'id'	:	aufgabe.Aufgaben_id,
-																'title' : aufgabe.title,
-																'zeit_moeglich' : aufgabe.ZeitsteuerungMoeglich,
-																'aufgabentyp' :	aufgabe.Aufgabentyp,
-															}});
-
-			ausgabe = aufgabe.title +' - '+aufgabe.Aufgaben_id;
-			itemList.push(ausgabe);
-			console.log('Ausgabe: '+ausgabe);
-			console.log('JSON-Obj: '+ JSON.stringify(aufgList));
-			console.log("aktuelle Klasse: " + aktuelleKlasse);
-
-				}
-			}
-
-			res.render('admin_start',{'alleAufgaben': aufgList,
-																'aktKl': aktuelleKlasse,
-																'alleKlassen': klassen,
-																'aktAufg': aktuelleAufgabe,
-																'istZeitgest': istZeitgesteuert,
-																'DauerAnzeige': anzeigeDauer,
-																'title': ' Admin - Startmenü',
-																'aktFach': aktuellesFach,
-																'alleFaecher': faecher,
-															});
-													});
-											});
+	app.get('/admin_start', isLoggedInAsAdmin, Controller.admin_startAction);
 
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
 
@@ -128,21 +75,6 @@ module.exports = function(app, passport){
 		});
 
 
-////////////////////////////////////////////////////////////////////////////
-//wahrscheinlich loeschbar
-	//app.get('/lk', isLoggedInAsUser, function (req, res) {
-	//	res.render('mul1',{	title : 'Leistungskontrolle',
-	//								'firstname' : req.user.local.firstname,
-	//							 	'lastname' : req.user.local.lastname,
-	//							 	'user': req.user.local.username,
-	//								'klasse': req.user.local.klasse,
-	//								'aufgabe': aktuelleAufgabe,
-//
-	//								});
-
-		//});
-////////////////////////////////////////////////////////////////////////////
-
 
 		app.get('/lk_abgegeben', isLoggedInAsUser, function(req,res){
 			res.render('lk_abgegeben',{title: 'LK abgegeben',
@@ -167,7 +99,7 @@ module.exports = function(app, passport){
 		x.save(function(err, result){
 			if(err) throw err;
 			if(result){
-				console.log('Aus Zeile 156: '+result);
+				console.log('Aus Zeile 170: '+result);
 			}
 		});
 	})
@@ -308,6 +240,16 @@ app.post('/saveconfigdata_part', function(req,res){
 		});
 
 ////////////////////////////////////////////////////////////////////////////////
+
+app.get('/savefach', function(req, res){
+console.log('Das neue Fach: '+req.query.Fach);
+var f  = req.query.Fach;
+ConfigData.updateOne({},{aktFach:f} ,{upsert:true},function(err,numAffected){
+				if(err)throw err;
+				if(numAffected){}
+			});
+	res.redirect('/admin_start');
+});
 
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 			var arr = [];

@@ -56,7 +56,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 require('./router')(app, passport);
 
-app.listen(8080, function(){
-	console.log('Der Nodeserver lauscht auf port 8080')
+app.listen(8081, function(){
+	console.log('Der Nodeserver lauscht auf port 8081')
 
 });

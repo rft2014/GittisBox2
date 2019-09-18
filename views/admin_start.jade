@@ -13,7 +13,7 @@ block content
 				div(class="cell small-5 ")
 					h6 Klasse:
 				div(class="cell small-7 ")
-					select(name="klasse")
+					select(name="klasse" id='klasse')
 							- for (var k in alleKlassen)
 									if alleKlassen[k] == aktKl
 										option(value=alleKlassen[k] selected)
@@ -25,7 +25,7 @@ block content
 				div(class="cell small-5 ")
 					h6 Fach:
 				div(class="cell small-7 ")
-					select(name="fach")
+					select(name="fach" id='fach')
 							- for (var f in alleFaecher)
 									if alleFaecher[f] == aktFach
 										option(value=alleFaecher[f] selected)
@@ -98,3 +98,7 @@ block content
 				}
 				//$('#xbuttonx').text('Was anderes');
 				})
+				$('#fach').change(function(){
+				var selectedFach = $(this).children('option:selected').val();
+				location.href='/savefach?'+'Fach='+selectedFach;
+				});
