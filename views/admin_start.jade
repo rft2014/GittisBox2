@@ -68,8 +68,12 @@ block content
 					div(class='small-3 cell')
 						label(for="pruefung") Pr&uuml;fung
 			button(type="submit" class="button large expanded" id='starteAufgabe') Bereitstellung der Aufgabe
-			button(type='submit' class='button large expanded' formaction='/saveconfigdata_part' value='Zum Notenbuch') Zum Notenbuch
-			a(href='/logout' class='button expanded warning') Ausloggen
+			//button(type='submit' class='button large expanded' formaction='/saveconfigdata_part' value='Zum Notenbuch') Zum Notenbuch
+			//a(href='/saveconfigdata_part' class='button large expanded') Notenbuch
+	div.grid-container
+		div(class='grid-x grid-margin-x align-middle')
+		button(class='button large expanded' id='notenbuch') Notenbuch
+		a(href='/logout' class='button expanded warning') Ausloggen
 
 		script.
 				let zgst = $('#aufgabe option:selected').attr('timer');
@@ -102,3 +106,12 @@ block content
 				var selectedFach = $(this).children('option:selected').val();
 				location.href='/savefach?'+'Fach='+selectedFach;
 				});
+				$('#klasse').change(function(){
+				var selectedKlasse = $(this).children('option:selected').val();
+				location.href='/saveklasse?'+'Klasse='+selectedKlasse;
+				});
+				$('#notenbuch').click(function(){
+				var selectedFach = $('#fach').children('option:selected').val();
+				var selectedKlasse = $('#klasse').children('option:selected').val();
+				location.href='/saveconfigdata_part?'+'Fach='+selectedFach +'&Klasse='+selectedKlasse;
+				})

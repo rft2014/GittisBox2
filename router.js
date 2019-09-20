@@ -228,10 +228,10 @@ app.get('/notenbuch', function(req, res){
 ////////				bei Aufruf Notenbuch																	//////////
 ////////////////////////////////////////////////////////////////////////////////
 
-app.post('/saveconfigdata_part', function(req,res){
-			var AktKlasse = new ConfigData({aktKlasse:req.body.klasse});
-			var kl = req.body.klasse;
-			var f  = req.body.fach;
+app.get('/saveconfigdata_part', function(req,res){
+			var AktKlasse = new ConfigData({aktKlasse:req.query.Klasse});
+			var kl = req.query.Klasse;
+			var f  = req.query.Fach;
 			ConfigData.updateOne({aktKlasse :{$regex:/[0-9]*[a-zA-Z]/}}, {aktKlasse:kl, aktFach:f} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
@@ -245,6 +245,15 @@ app.get('/savefach', function(req, res){
 console.log('Das neue Fach: '+req.query.Fach);
 var f  = req.query.Fach;
 ConfigData.updateOne({},{aktFach:f} ,{upsert:true},function(err,numAffected){
+				if(err)throw err;
+				if(numAffected){}
+			});
+	res.redirect('/admin_start');
+});
+///////////////////////////////////////////////////////////////////////////////
+app.get('/saveklasse', function(req, res){
+var kl  = req.query.Klasse;
+ConfigData.updateOne({},{aktKlasse:kl} ,{upsert:true},function(err,numAffected){
 				if(err)throw err;
 				if(numAffected){}
 			});
