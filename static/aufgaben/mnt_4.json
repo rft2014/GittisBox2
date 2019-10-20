@@ -1,0 +1,81 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Celsius",
+	"description": "Biographie Celsius' und die Hintergruende seiner Temperaturskala",
+	"klassenstufe": "5",
+	"Fach": "MNT",
+	"Aufgabentyp": "verstehLesen_1",
+	"Aufgaben_id": "mnt_00004",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"page": {
+			"description": "laufende Nummer der Textseite",
+			"type": "number"
+		},
+		"textseite": {
+			"description": "Textabschnitt des Textes",
+			"type": "string"
+		},
+		"ergebnis": {
+			"description": "Ergebnis",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"page": 1,
+		"textseite":"Anders Celsius wurde am 27. November 1701 im schwedischen Uppsala geboren. Er war der Sohn eines Astronomieprofessors. Nach seinem Schulabschluss begann er 1717 ein Studium der Rechtswissenschaften, konzentrierte sich dann aber auf die Mathematik und die Naturwissenschaften. 1730 wurde er Professor für Astronomie an der Universität in Uppsala. 1732 begann er, wie es für diese Zeit für wohlhabende Familien üblich war, eine Bildungsreise durch Europa. Unter anderem führte ihn diese zu den Sternwarten in Nürnberg, Rom und Paris. Nach seiner Rückkehr nach Uppsala nahm er 1736 an der bekannten Lappland Expedition des französischen Astronomen Maupertius teil. Die Teilnahme an dieser Expedition machte Celsius zu einem berühmten Mann und half ihm bei seinen Bemühungen, die schwedische Regierung zu überzeugen, in Uppsala ein modernes Observatorium zu errichten. Das Celsius Observatorium wurde 1741 fertiggestellt und verfügte über das modernste Instrumentarium der damaligen Zeit.",
+ 		"Fragen":[
+			{
+				"Fragetext":"Wann und wo wurde Celsius geboren?",
+				"Antworten":["27. November 1701 in Upsala","27. November 1701 in Uppsili","27. November 1701 in Uppsala"],
+				"korrekteAntwort":["27. November 1701 in Uppsala"]
+			},
+			{
+				"Fragetext":"Was studierte Celsius?",
+				"Antworten":["Medizin, Mathematik und Biologie","Rechtswissenschaften, Naturwissenschaften und Mathematik","Rechtswissenschaften, Medizin und Mathematik"],
+				"korrekteAntwort":["Rechtswissenschaften, Naturwissenschaften und Mathematik"]
+			},
+			{
+				"Fragetext":"Was unternahm Celsius 1732?",
+				"Antworten":["Bildungsreise","Überseereise","Städtereise"],
+				"korrekteAntwort":["Bildungsreise"]
+				},
+			{
+				"Fragetext":"Welchen Vorteil brachte ihm die Expedition?",
+				"Antworten":["Er hat viele neue Erfahrungen gesammelt und konnte diese gut gebrauchen.","Er wurde berühmt und hatte Einfluss auf die schwedische Regierung.","Er konnte ein modernes Observatorium errichten.","Er wurde an der Universität befördert."],
+				"korrekteAntwort":["Er wurde berühmt und hatte Einfluss auf die schwedische Regierung.","Er konnte ein modernes Observatorium errichten."]
+				}]
+			},
+		{
+		"page": 2,
+		"textseite":"Zur damaligen Zeit gehörten zu den Aufgaben eines Astronoms die Durchführung geographischer Messungen, meteorolgische Beobachtungen und andere Dinge. Daher führte Celsius zahlreiche Messungen zur Kartographie durch und er war einer der ersten Wissenschaftler, die erkannten, dass sich die nordische Landmasse langsam weiter über den Meeresspiegel erhebt, ein Prozess, der bereits seit der letzten Eiszeit anhält. Im April 1744 starb Celsius mit nur 42 Jahren in Uppsala.",
+		"Fragen":[
+			{
+				"Fragetext":"Welche Aufgaben hatte ein Astronom?",
+				"Antworten":["biologische und meteorologische Beobachtungen","physikalische Messungen und meteorologische Beobachtungen","geographische Messungen und meteorologische Beobachtungen"],
+				"korrekteAntwort":["geographische Messungen und meteorologische Beobachtungen"]
+			}]
+		},
+		{
+			"page": 3,
+			"textseite":"Celsius konstruierte sein Thermometer zwischen 1740 und 1742 auf der Grundlage der Kenntnis der Entwicklungen von Fahrenheit und anderen Wissenschaftlern. Im Unterschied zu Fahrenheit schlug Celsius eine hundertstufige Temperaturskala vor und wählte als Fixpunkte die Schmelztemperatur von Eis und die Siedetemperatur von Wasser. Dabei berücksichtigte er bereits die von Fahrenheit erkannte Abhängigkeit der Siedetemperatur vom Luftdruck. Allerdings hatte Celsius den Siedepunkt des Wassers mit 0°C und den Gefrierpunkt des Wassers mit 100°C festgelegt. Erst nach seinem Tod wurde die Skala verändert und der Gefrierpunkt des Wassers mit 0°C und der Siedepunkt mit 100°C bezeichnet. Das sogenannte „schwedische Thermometer“, das nach dem Tod von Celsius auch international Verbreitung fand, hatte die noch heute übliche Skaleneinteilung, die zu Ehren von Celsius als Celsius Skala bezeichnet wird. Lediglich in England und in den USA werden auch noch andere Temperaturskalen genutzt, insbesondere die Fahrenheit-Skala.",
+			"Fragen":[
+			{
+			"Fragetext":"Wieviele Stufen hatte die Skala von Celsius?",
+			"Antworten":["150","100","80"],
+			"korrekteAntwort":["100"]
+			},
+		{
+			"Fragetext":"Welche Fixpunkte legte Celsius auf seiner Skala fest?",
+			"Antworten":["Schmelztemperatur von Eis bei 0°C","Siedetemperatur bei 100°C","Schmelztemperatur bei 100°C","Siedetemperatur bei 0°C"],
+			"korrekteAntwort":["Schmelztemperatur bei 100°C","Siedetemperatur bei 0°C"]
+			},
+		{
+			"Fragetext":"Welche Fixpunkte hat das heutige Thermometer?",
+			"Antworten":["Schmelztemperatur von Eis bei 0°C","Siedetemperatur bei 100°C","Schmelztemperatur bei 100°C","Siedetemperatur bei 0°C"],
+			"korrekteAntwort":["Schmelztemperatur von Eis bei 0°C","Siedetemperatur bei 100°C"]
+			}]
+	}]
+}

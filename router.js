@@ -1,4 +1,6 @@
- var Controller = require('./controller/admin_start.controller');
+ var Controller1 = require('./controller/admin_start.controller');
+ var Controller2 = require('./controller/aufgabe_loesen.controller');
+ var Controller3 = require('./controller/lesen_verstehen.controller');
 var User = require('./models/user');
 var Ergebnis = require('./models/results');
 var ConfigData = require('./models/configdata');
@@ -31,9 +33,12 @@ module.exports = function(app, passport){
 		if (req.user.local.role === 'admin') {res.redirect('/admin_start');}
 		if (req.user.local.role === 'user') {res.redirect('/user');}
 	});
-	app.get('/admin_start', isLoggedInAsAdmin, Controller.admin_startAction);
-
+	app.get('/admin_start', isLoggedInAsAdmin, Controller1.admin_startAction);
+  app.get('/aufgabe_loesen',isLoggedInAsUser, Controller2.aufgabe_loesenAction);
+  app.post('/save_lesenverstehen',isLoggedInAsUser,Controller3.lesen_verstehenAction);
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
+
+
 
 		console.log('schritt 1, aktuelle Klasse: '+ req.query.KL);
 		Ergebnis.find({'antworten.klasse':req.query.KL, 'antworten.insNotenbuch':'false'}, function(err, alleNoten){
@@ -78,9 +83,9 @@ module.exports = function(app, passport){
 
 		app.get('/lk_abgegeben', isLoggedInAsUser, function(req,res){
 			res.render('lk_abgegeben',{title: 'LK abgegeben',
-																	'firstname' : req.user.local.firstname,
-																	'Note': req.query.note,
-																});
+								'firstname' : req.user.local.firstname,
+									'Note': req.query.note,
+					});
 		});
 
 		app.get('/editor', isLoggedInAsAdmin, function(req,res){
@@ -260,6 +265,9 @@ ConfigData.updateOne({},{aktKlasse:kl} ,{upsert:true},function(err,numAffected){
 	res.redirect('/admin_start');
 });
 
+/*
+Ist als Controller ausgegliedert. Kann geloescht werden, wenn keine Fragen mehr sind
+heute:26.9.2019
 		app.get('/aufgabe_loesen',isLoggedInAsUser, function(req,res){
 			var arr = [];
 ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp modus',{lean:true},function(err,aktau){
@@ -296,7 +304,7 @@ ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp modus',
 						});
 					});
 
-
+*/
 
 
 				app.get('/lt', function(req,res){

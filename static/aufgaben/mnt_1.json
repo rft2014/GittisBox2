@@ -1,0 +1,117 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Unter unserer Haut - Verstehendes Lesen",
+	"description": "Text von Giulia Enders aus der Zeit Nr. 50; Dezember 2015",
+	"klassenstufe": "6",
+	"Fach": "MNT",
+	"Aufgabentyp": "verstehLesen_1",
+	"Aufgaben_id": "mnt_00001",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"page": {
+			"description": "laufende Nummer der Textseite",
+			"type": "number"
+		},
+		"textseite": {
+			"description": "Textabschnitt des Textes",
+			"type": "string"
+		},
+		"ergebnis": {
+			"description": "Ergebnis",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"page": 1,
+		"textseite":"Fast alles Sichtbare an einem Menschen ist tot. Die oberste Schicht unserer Haut sind abgestorbene Zellen, die schützend die lebenden bedecken. Auch Haare, Wimpern oder Fingernägel bedecken uns so. Kein Erkältungsvirus dieser Welt kann unsere Hülle infizieren. Das liegt daran, was ein Virus ist: kein Lebewesen, sondern eine Sammlung von Genen (ähnlich unserer DNA), die in der Luft herumfliegt. Anders als lebendige Wesen wie Bakterien ist ein Virus im Grunde nur ein Stück Information. Trifft es auf unsere leblose Hülle, passiert damit nichts. Wir kriegen keine Handschmerzen, wenn wir eine angenieste Türklinke anfassen. An ein paar Stellen macht unser Körper einen Sicherheitskompromiss: an Schleimhäuten wie in Mund oder Nase. Hier strecken wir der Welt unsere lebendigen Zellen entgegen, weil wir damit schmecken oder riechen wollen. An diesen wenigen Zentimeternkönnen wir uns erkälten.",
+		"Fragen":[
+			{
+				"Fragetext":"Unser Körper ist überall bedeckt von",
+				"Antworten":["abgestorbenen Zellen", "Schleimhaut","Fell", "Muskeln","Make up" ],
+				"korrekteAntwort":["abgestorbenen Zellen"]
+			},
+			{
+				"Fragetext":"Ist ein Virus ein Lebewesen?",
+				"Antworten":["Ja", "Nein"],
+				"korrekteAntwort":["Nein"]
+			}]
+		},
+		{
+		"page": 2,
+		"textseite":"Passiert das, fühlen wir uns manchmal wie ein Erkältungsopfer, das es >>erwischt hat<<. Ein böses Virus attackiert uns mit Halsweh und Schnupfen! Wie gemein! Das ist naturwissenschaftlich nicht ganz korrekt. Es ist so, als ob man sich auf den Boden wirft, nachdem man sich an der Tischkante gestoßen hat, und laut ruft: >>Sie hat mich angegriffen!<< Ein Virus ist genauso böse wie diese Tischkante. Beide sind nicht lebendig, beide sind nur irgendwie an einem unpraktischen Ort für uns. Es hilft, Vorgänge besser zu verstehen, bevor man einer Tischkante oder einem Virus feindliche Blicke zuwirft.",
+		"Fragen":[
+			{
+				"Fragetext":"Ist ein Virus böse?",
+				"Antworten":["Ja, denn er schadet uns.", "Nein, ein Virus ist kein Lebewesen."],
+				"korrekteAntwort":["Nein, ein Virus ist kein Lebewesen."]
+			}]
+		},
+		{
+		"page": 3,
+		"textseite":"Ginge es nach dem Virus, würden wir am besten gar nichts von so einer Infektion mitbekommen. Es schleust seine Gen-Information in unsere Zelle, und diese kann damit plötzlich etwas herstellen, was unsere eigene DNA vorher nie im Repertoire hatte: virale Partikel. In etwa so, als ob die Natur einen USB-Stick in unseren Schädel steckt und wir auf einmal Französisch sprechen. Was der Virus-Bauplan nicht weiß, ist, dass unsere Zelle dadurch bei ihrer sonstigen Arbeit gestört wird. Sie will unsere Gene ablesen und Nasenhaare oder Schutzschleim herstellen. Auf einmal gibt es auch noch einen zweiten Bauplan. Das gefällt ihr nicht. In diesem Moment beginnt das, was wir >>Erkältung<< nennen. Es ist fast ein bisschen schockierend zu sagen, aber: Das Unangenehme an einer Erkältung kommt nicht vom Virus sondern von uns selbst. Halsweh, Schnupfen und Co. sind Zeichen der Empörung über ein 0,00003 Millimeter großes Partikel.",
+		"Fragen":[
+			{
+				"Fragetext":"Was schleust ein Virus in unsere Zellen ein?",
+				"Antworten":["Einen giftigen Erkältungssaft.", "Wasser", "Eine genetische Information."],
+				"korrekteAntwort":["Eine genetische Information."]
+			}]
+		},
+		{
+		"page":4,
+		"textseite":"Ist unsere Nasenzelle empört, aktiviert sie den Abwehrmodus. Sie zerschneidet das Virus mit extra dafür produzierten >>Virus-Scheren<<, warnt ihre Nachbarzellen und macht sich transparenter. Für die Transparenz hat sie auf ihrer Außenseite Proteine, die wie kleine Schaufenster funktionieren. Hier stellt eine Zelle aus, was sie heute so getan hat. Etwas Normales wie >>Habe Nasenhärchen hergestellt<<  wird genauso stolz präsentiert wie >>Habe Viren maßstabsgetreu nachgebaut<<. Ahnt unsere Zelle, dass etwas nicht ganz rund läuft, baut sie noch mehr Fenster. Unser Immunsystem besitzt wiederum Zellen, die den ganzen Tag herumpatrouillieren und sich solche Schaufenster angucken. Millionen davon. Sind lauter Fremdprodukte im Fenster, gibt die Patrouille ein Zeichen. In diesem Moment versteht unsere Nasenzelle, was nötig ist, um uns zu helfen: Sie macht sich kaputt. sodass das Virus nicht mehr von ihr unterstützt wird.",
+		"Fragen":[
+			{
+				"Fragetext":"Wie wehrt sich die Zelle gegen die Viren?",
+				"Antworten":["Die Zelle kann sich gegen die Viren nicht wehren.", "Die Zelle vergiftet die Viren mit einem selbst produzierten Serum.","Die Zelle zerschneidet die Viren mit Virenscheren." ],
+				"korrekteAntwort":["Die Zelle zerschneidet die Viren mit Virenscheren."]
+			},
+			{
+				"Fragetext":"Um die Weiterverbreitung des Virus zu  verhindern,",
+				"Antworten":["Verdaut sie die Viren.", "Verbrennt sie die Viren", "macht sich die Zelle selbst kaputt und damit auch die Viren."],
+				"korrekteAntwort":["macht sich die Zelle selbst kaputt und damit auch die Viren."]
+			}]
+		},
+		{
+		"page":5,
+		"textseite":"Tatsächlich haben nur wenige Rachen- oder Nasenzellen das Erkältungsvirus, und trotzdem macht die komplette Nasen-Rachen-Etage bei der Abwehraktion mit. Unser Rachen wird rot, denn die Gefäße weiten sich, um mehr Immunzellen anzuliefern. Die Nase läuft, weil die Gefäße noch dazu etwas undicht werden, sodass die Immunzellen auch in das umliegende Gewebe einwandern können. Hierbei strömt auch Flüssigkeit mit, die wir dann als laufende Nase bemerken. Außerdem werden die Zellen dazu angeregt, mehr Schutzschleim zu bilden, was das Ganze >>rotzig<< werden lässt und auch zu Husten beiträgt.",
+		"Fragen":[
+			{
+				"Fragetext":"Bei einer Erkältung wird unser Rachen rot, weil",
+				"Antworten":["der Arzt sonst nicht sehen kann, dass wir erkältet sind.", "die Immunzellen so erkennen, wo sie helfen können.", "sich die Gefäße weiten und so mehr Blut fließen kann."],
+				"korrekteAntwort":["sich die Gefäße weiten und so mehr Blut fließen kann."]
+			}]
+		},
+		{
+		"page":6,
+		"textseite":"Für den Hausarzt ist das Maß dieser Empörung interessant. Er will wissen: Ist es ein banales Erkältungsvirus oder etwas Ernstes? Er hört dann zum Beispiel auf unsere Lunge, weil simple Erkältungsviren dort überhaupt nichts bewirken können. Außerhalb von Nase und Rachen können sie nicht mal an den anderen Zellen andocken -- wer seine Nase hochzieht und dann runterschluckt, riskiert also gar nichts, außer etwas irritierte Straßenbahnsitznachbarn. (Ehrlich gesagt, empfehlen Hals-Nasen-Ohren-Ärzte das Hochziehen sogar, da Schnäuzen Druck auf die Nebenhöhlen ausübt.) Ein normaler Erkältungshusten oder milde Beschwerden sind also eher beruhigend. Spricht am Ende alles für eine Erkältung, gibt es eine wilde Palette von Pillen, Sirups und Ratschlägen.",
+		"Fragen":[
+			{
+				"Fragetext":"Darf man die Nase hochziehen, wenn man erkältet ist?",
+				"Antworten":["Nein, auf gar keinen Fall.", "In Gesellschaft wirkt es nicht sehr nett, aber die Ärzte empfehlen es."],
+				"korrekteAntwort":["In Gesellschaft wirkt es nicht sehr nett, aber die Ärzte empfehlen es."]
+			}]
+		},
+		{
+		"page":7,
+		"textseite":"Das jahrzehntelange Wissenschafts-Battle mit Studien zu >>Vitamin C und Zink oder nicht?<< liest sich wie ein Kampf zwischen zwei Geschwistern auf dem Autorücksitz. Ich versuche, den letzten Stand so akkurat wie möglich wiederzugeben: Eine regelmäßige Vitamin-C-Einnahme kann die Krankheitsdauer verkürzen -- wirft man allerdings Pro- und Kontra- Studien in einen Topf, durchschnittlich nur um etwa acht Prozent. (Bei sieben Tagen ist das etwa ein halber Tag.) Mehr bringt es bei Kindern, körperlich hart arbeitenden oder sehr sportlichen Menschen. Zink kommt teilweise etwas besser weg. Die letzte größere Studie zeigt zum Beispiel eine Verkürzung der Erkältung um 42 Prozent, wenn man gleich zu Beginn Zinkacetat-Tabletten lutscht, mit insgesamt mindestens 75 mg Zink pro Tag. Die Autoren der Studie sehen allerdings selbst, dass es problematisch ist, diese Empfehlung zu geben, da es solche Lutschtabletten in den Apotheken für gewöhnlich nicht gibt. Außerdem können so hohe Dosen auch wieder Nebenwirkungen haben. In diesem Moment fasst man sich an die Stirn und fragt, warum man sich gerade mehrere Seiten einer sehr klein gedruckten Studie reingezogen hat. ",
+		"Fragen":[
+			{
+				"Fragetext":"Vitamin C ist gesund.",
+				"Antworten":["Ja", "Nein"],
+				"korrekteAntwort":["Ja"]
+			}]
+		},
+		{
+		"page": 8,
+		"textseite": "Bei Schmerzstiller bis Schleimlöser, Inhalieren oder Nasenspray geht es  größtenteils darum, es unserem Körper  beider Heilung so angenehm wie möglich zu machen, denn das allerbeste Medikament stellt er letztlich selbst her: Nach ein paar Tagen Erkältungsgemetzel bilden einige Immunzellen Substanzen, die passgenau auf ebendas Erkältungsvirus zielen, das wir uns eingefangen haben. Sie sammeln damit alle umherschwirrenden Erreger ein und verklumpen sie. Das gefällt unseren Fresszellen, die im Blut umhertuckern, bis es mal wieder so einen Klumpen für sie zu futtern gibt: Sie essen die Krankheitserreger einfach auf und zucken mit den Schultern, als wäre nichts dabei. So werden auch die letzten Viren entsorgt, und unsere Nasen-Rachen-Zellen können sich wieder beruhigen. Wer sich also im Spiegel betrachtet und fürchtet, der eigene Körper sei für eine Erkältung nicht gewappnet, schaut nur auf unsere clevere Tarnhülle — im Inneren haben wir Schaufenster, Viren-Scheren und eine höhere Erfolgsquote als jedes Erkältungsmedikament dieser Welt.",
+		"Fragen":[
+			{
+				"Fragetext":"Was machen die Immunzellen mit den umherschwirrenden Erregern? ",
+				"Antworten":["Sie lösen sie auf.", "Sie fressen sie", "Sie verklumpen sie, damit die Fresszellen sie auffressen können."],
+				"korrekteAntwort":["Sie verklumpen sie, damit die Fresszellen sie auffressen können."]
+			}]
+		}
+	]
+}

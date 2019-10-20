@@ -85,3 +85,23 @@ table thead th {
 #antwortPruefung{
   overflow-y:auto;
 }
+.fliesstext {;
+  font-size: 18px;
+  text-align: left;
+  //padding: 10px !important;
+}
+.vLFragenHeader {
+  background-color: lightblue;
+  font-size: 18px;
+  text-align: left;
+  padding: 10px !important;
+}
+.vLFragentext {
+  //background-color: lightCoral;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px !important;
+}
+#aufgabenStellung {
+  padding: 10px !important;
+}

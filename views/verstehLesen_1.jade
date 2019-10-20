@@ -1,0 +1,70 @@
+extends ./base_ons
+
+html
+	head
+		title : title
+		block extrajs
+			script(src='/aufgabentypen/verstehLesen_1.js')
+			script(src='/js/app.js')
+	block content
+		div#user #{user}
+		div#firstname #{firstname}
+		div#lastname #{lastname}
+		div#klasse #{klasse}
+		div#istZeitgest #{zeitgest}
+		div#anzeigedauer #{DauerAnzeige}
+		div#aufg_id #{aufgabenDaten.Aufgaben_id}
+		div#maxAufgabenAnzahl #{aufgabenDaten.Aufgaben.length}
+		div#aufgabenFile #{aufgabenDaten_json}
+		ons-page
+			ons-toolbar
+				div.left
+					ons-toolbar-button(onclick='kar_zurueck()')
+						ons-icon(icon='md-chevron-left')
+				div.center
+					span#bezeichnung Seite:&nbsp;
+					span#aktAufgabe
+					span#slash /
+					span#anzahlAufgaben #{aufgabenDaten.Aufgaben.length}
+				div.right
+					//ons-toolbar-button(onclick='kar_weiter()')
+						//ons-icon(icon='md-chevron-right')
+			//ons-bottom-toolbar
+			//		div(id='bottom-toolbar')	#{firstname} #{lastname}, Kl.: #{klasse}
+			ons-carousel#kar(fullscreen  auto-scroll)
+				ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card
+							h3 Hallo #{firstname}!
+							p Willkommen zu: #{aufgabenDaten.title}&nbsp; #{aufgabenDaten.Aufgaben_id}
+							p Auf den folgenden Seiten findest du einen Text, der viele Informationen
+								| enthält. Am Ende jeder Seite findest du Kontrollfragen. Damit kannst du
+								| testen, ob du den Text verstanden hast. Beachte, dass eine oder mehrere Antworten
+								| richtig sein können. Wenn du auf den Button 'Weiter' klickst, wirst du auf die nächste
+								| Seite weitergeleitet. Natürlich nur, wenn die Fragen richtig beantwortet sind. 
+							p Ich w&uuml;nsche dir viel Erfolg!
+							p
+								ons-button(id='lVStartbutton' modifier='large--cta ' onclick='starteAufgabe()') Aufgabe starten
+							p
+								ons-button(onclick="window.open('/logout')" modifier='large light') Ausloggen
+				-	for(var i in aufgabenDaten.Aufgaben){
+					ons-carousel-item(style="background-color:#c0c0c0; overflow:auto")
+						ons-card(id='aufgabenStellung')
+							p.fliesstext #{aufgabenDaten.Aufgaben[i].textseite}
+							if aufgabenDaten.Aufgaben[i].Fragen
+							h3 Beantworte folgende Fragen:
+							ons-list
+								-	for(var j in aufgabenDaten.Aufgaben[i].Fragen)
+										ons-list-header.vLFragenHeader #{aufgabenDaten.Aufgaben[i].Fragen[j].Fragetext}
+										p
+										- for(var k in aufgabenDaten.Aufgaben[i].Fragen[j].Antworten)
+											ons-list-item(tappable class='Frage'+[j])
+												label(class='left')
+													ons-checkbox(class='vLFragentext'+i+j id='item'+i+j+k name='item'+i+j value= '#{aufgabenDaten.Aufgaben[i].Fragen[j].Antworten[k]}')
+												label(for='item'+i+j+k class='center') #{aufgabenDaten.Aufgaben[i].Fragen[j].Antworten[k]}
+							ons-button(modifier="large" id="weiter" onclick='checkAntworten()') Weiter
+				-	}
+					ons-carousel-item(style="background-color:#c0c0c0")
+						ons-card Das wars
+						ons-bottom-toolbar
+							section(style="padding:4px")
+								ons-button(modifier="large" id="btn_abgeben" onclick="beendeAufgabe()") Lösung abgeben

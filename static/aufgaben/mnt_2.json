@@ -1,0 +1,81 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Fahrenheit",
+	"description": "Biographie Fahrenheits und die Hintergruende seiner Temperaturskala",
+	"klassenstufe": "5",
+	"Fach": "MNT",
+	"Aufgabentyp": "verstehLesen_1",
+	"Aufgaben_id": "mnt_00002",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"page": {
+			"description": "laufende Nummer der Textseite",
+			"type": "number"
+		},
+		"textseite": {
+			"description": "Textabschnitt des Textes",
+			"type": "string"
+		},
+		"ergebnis": {
+			"description": "Ergebnis",
+			"type": "string"
+		}
+
+	},
+	"Aufgaben":[{
+		"page": 1,
+		"textseite":"Wenn wir vom Wetter reden, messen wir die Temperatur in Grad Celsius. Die englischsprachigen Länder messen dagegen in Grad Fahrenheit. Benannt ist diese Einheit nach dem deutschen Physiker Daniel Gabriel Fahrenheit, der vom 24. Mai 1686 bis zum 16. September 1736 lebte und in Danzig geboren wurde. Die Familie Fahrenheit gehörte im 17. Jahrhundert zu den angesehensten Bürgerfamilien. Weil seine Eltern früh starben, ging der junge Fahrenheit im Jahr 1702 nach Amsterdam und begann dort eine Kaufmannslehre. Nebenbei aber beschäftigte er sich mit Physik und führte viele Experimente durch.",
+ 		"Fragen":[
+			{
+				"Fragetext":"Wann wurde Fahrenheit geboren?",
+				"Antworten":["24. März 1668", "24. Mai 1698","24. Mai 1686"],
+				"korrekteAntwort":["24. Mai 1686"]
+			},
+			{
+				"Fragetext":"Wie lautet der vollständige Name Fahrenheits?",
+				"Antworten":["Daniel Ferdinand Fahrenheit", "Daniel Gabriel Müller", "Daniel Gabriel Fahrenheit"],
+				"korrekteAntwort":["Daniel Gabriel Fahrenheit"]
+			},
+			{
+				"Fragetext":"Wie wuchs Fahrenheit auf?",
+				"Antworten":["Er hatte wohlhabende Eltern.","Er wurde in Amsterdam geboren.","Er hat Physik in Berlin studiert."],
+				"korrekteAntwort":["Er hatte wohlhabende Eltern."]
+				},
+			{
+				"Fragetext":"Wie alt war Fahrenheit als er starb?",
+				"Antworten":["49","48","50"],
+				"korrekteAntwort":["50"]
+				}]
+			},
+		{
+		"page": 2,
+		"textseite":"Zur Erweiterung seiner Kenntnisse unternahm er weite Reisen nach Skandinavien und England und besuchte viele deutsche Städte. In dieser Zeit hatte er Briefkontakt mit vielen wichtigen Gelehrten dieser Epoche. In Kopenhagen ließ er sich 1708 von dem Astronomen Ole Römer zum Bau eines Thermometers anregen. In Halle tauschte er sich mit Universalgelehrten und Mathematiker Christian Wolff aus. Mit Gottfried Wilhelm Leibniz diskutierte er in Briefen über eine Quecksilber-Tropfuhr zur Längenbestimmung und über den Bau eines Spiegelteleskops. Nach mehr als zehn Jahren auf reisen kehrte er 1717 nach Holland zurück. In Amsterdam ließ er sich als Glasbläser nieder und entwickelte Barometer, Höhenmesser und Thermometer. 1724 schlug er dann seine Temperaturskala vor.",
+		"Fragen":[
+			{
+				"Fragetext":"Wie vertiefte Fahrenheit seine Kenntnisse?",
+				"Antworten":["Er las viel Bücher zu den unterschiedlichen Themen.", "Er reiste viel.", "Er machte Experimente in seinem Zimmer in Amsterdam aus.","Er tauschte sich mit den Gelehrten seiner Zeit aus."],
+				"korrekteAntwort":["Er reiste viel.", "Er tauschte sich mit den Gelehrten seiner Zeit aus."]
+			},
+		{
+			"Fragetext":"Was entwickelte er in Amsterdam?",
+			"Antworten":["Höhenmesser","Brotmesser","Gradmesser","Barometer","Metermaß","Thermometer"],
+			"korrekteAntwort":["Höhenmesser","Barometer","Thermometer"]
+			}]
+		},
+		{
+		"page": 3,
+		"textseite":"Eigentlich gehörte im 18. Jahrhunderts die Wetterkunde zu den Aufgaben eines Astronomen. Deswegen war für Fahrenheit das Treffen mit Ole Römer ganz besonders wichtig. Römer war der Erste, der ein Thermometer entwickelte, das sich an zwei festen Punkten orientierte. Dies übernahm  Fahrenheit und teilt seine Skala in 180 Teile. Der Gefrierpunkt des Wassers liegt bei 32° Fahrenheit und der Siedepunkt bei 212° Fahrenheit. Es sollten negative Temperaturen vermieden werden. Fahrenheit wählte als Nullpunkt seiner Temperaturskala die tiefste Temperatur des strengen Winters von 1708/1709 in seiner Heimatstadt Danzig. Dies waren -17,8°Celsius. Mit einer Kältemischung aus Eis, Wasser und Salmiak oder Seesalz konnte er diesen Fixpunkt wieder herstellen. Dadurch gelang es Fahrenheit als erstem Wissenschaftler, ein eichbares Thermometer herzustellen. Erst diese Eichung erlaubte eine serienmäßige Produktion von Thermometern. Celsius hatte sein Thermometer zu dieser Zeit noch nicht erfunden.",
+		"Fragen":[
+			{
+				"Fragetext":"Woran hat sich Fahrenheit bei seiner Skala orientiert?",
+				"Antworten":["An gar nichts.", "Am Thermometer von Römer.", "Am Thermometer von Celsius."],
+				"korrekteAntwort":["Am Thermometer von Römer."]
+			},
+		{
+			"Fragetext":"Wieso gelang es Fahrenheit ein eichbares Thermometer herzustellen?",
+			"Antworten":["Weil er sich an Römer orientierte.","Weil der Nullpunkt als Fixpunkt wiederherstellbar war.","Weil Celsius sein Thermometer noch nicht erfunden hatte.","Weil er negative Temperaturen vermeiden wollte."],
+			"korrekteAntwort":["Weil der Nullpunkt als Fixpunkt wiederherstellbar war."]
+			}]
+		}]
+	}

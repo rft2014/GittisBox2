@@ -15,7 +15,9 @@ var MongoDBStore = require('connect-mongodb-session')(session)
 
 
 mongoose.connect('mongodb://localhost:27017/gittisbox',{
-						useNewUrlParser: true});
+						useNewUrlParser: true,
+						useUnifiedTopology: true
+					});
 	console.log("MongooseVersion: "+mongoose.version)
 require('./config/passport')(passport); // pass passport for configuration
 
