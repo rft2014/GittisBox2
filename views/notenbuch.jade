@@ -19,6 +19,7 @@ block content
 			tbody
 				- for(let i in schueler)
 					tr
+						td=parseInt(i)+1
 						td=schueler[i].local.lastname + ', '+schueler[i].local.firstname
 						- for(var x in AUFG)
 							td(align='center' id='#{schueler[i].local.username}_#{AUFG[x]}')
