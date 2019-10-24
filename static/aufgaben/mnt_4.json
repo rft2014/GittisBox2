@@ -68,6 +68,11 @@
 			"korrekteAntwort":["100"]
 			},
 		{
+			"Fragetext":"Wann konstruierte Celsius sein Thermometer und welche Grundlage nutzte er?",
+			"Antworten":["Er konstruierte sein Thermometer in der Zeit zwischen 1840-1842. Ausgangspunkt war die Fahrenheit-Skala","Er konstruierte sein Thermometer in der Zeit zwischen 1740-1742. Ausgangspunkt war die Fahrenheit-Skala.", "Er konstruierte sein Thermometer in der Zeit zwischen 1740-1742. Ausgangspunkt war die Temperaturskala von Isaac Newton"],
+			"korrekteAntwort":["Er konstruierte sein Thermometer in der Zeit zwischen 1740-1742. Ausgangspunkt war die Fahrenheit-Skala."]
+			},
+		{
 			"Fragetext":"Welche Fixpunkte legte Celsius auf seiner Skala fest?",
 			"Antworten":["Schmelztemperatur von Eis bei 0°C","Siedetemperatur bei 100°C","Schmelztemperatur von Eis bei 100°C","Siedetemperatur von Wasser bei 0°C"],
 			"korrekteAntwort":["Schmelztemperatur von Eis bei 100°C","Siedetemperatur von Wasser bei 0°C"]
