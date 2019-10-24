@@ -25,8 +25,13 @@
 	},
 	"Aufgaben":[{
 		"page": 1,
-		"textseite":"William Thomson wurde am 26. Juni 1824 als Sohn eines Mathematiklehrers und späteren Mathematikprofessors in Belfast (Irland) geboren. Als er 6 Jahre alt war, starb seine Mutter. Sein Vater unterrichtete seine Söhne selbst und erreichte, dass sie im Alter von nicht einmal 10 Jahren Vorlesungen an der Universität folgen konnten. Zu Hause bauten die Kinder Experimentiergeräte nach. Mit 10 Jahren wurde William Thomson an der Universität in Glasgow immatrikuliert und absolvierte dann von 1841 bis 1845 ein Studium am College in Cambridge. Trotz des intensiven Studiums war er auch ein erfolgreichere Ruderer und musizierte gern. Schon in dieser Zeit verfasste er erste Artikel, z.B. „Über die Gestalt der Erde“. Darüber hinaus beschäftigte er sich elektrischen und magnetischen Feldern. 1846 vervollständigte er seine Kenntnisse in Paris und übernahm im selben Jahr mit 22 Jahren den Lehrstuhl für Physik an der Universität in Glasgow, den er bist 1895 innehatte.",
+		"textseite":"William Thomson wurde am 26. Juni 1824 als Sohn eines Mathematiklehrers und späteren Mathematikprofessors in Belfast (Irland) geboren. Als er 6 Jahre alt war, starb seine Mutter. Sein Vater unterrichtete seine Söhne selbst und erreichte, dass sie im Alter von nicht einmal 10 Jahren Vorlesungen an der Universität folgen konnten. Zu Hause bauten die Kinder Experimentiergeräte nach. Mit 10 Jahren wurde William Thomson an der Universität in Glasgow immatrikuliert und absolvierte dann von 1841 bis 1845 ein Studium am College in Cambridge. Trotz des intensiven Studiums war er auch ein erfolgreicher Ruderer und musizierte gern. Schon in dieser Zeit verfasste er erste Artikel, z.B. „Über die Gestalt der Erde“. Darüber hinaus beschäftigte er sich elektrischen und magnetischen Feldern. 1846 vervollständigte er seine Kenntnisse in Paris und übernahm im selben Jahr mit 22 Jahren den Lehrstuhl für Physik an der Universität in Glasgow, den er bist 1895 innehatte.",
  		"Fragen":[
+ 			{
+ 				"Fragetext":"Wann und wo wurde William Thomson geboren?",
+				"Antworten":["Am 26. 06. 1824 in Glasgow","Am 24. Juni 1824 in Belfast","Am 26. Juni 1824 in Belfast"],
+				"korrekteAntwort":["Am 26. Juni 1824 in Belfast"]
+ 			},
 			{
 				"Fragetext":"Wie verbrachte William Thomson seine Kindheit?",
 				"Antworten":["Mit Privatunterricht des Vaters","Bei Vorlesungen an der Universität","Mit Spielen im Garten","Auf einem Internat","Mit seinem Bruder und Experimentiergeräten"],
@@ -45,7 +50,7 @@
 			},
 		{
 		"page": 2,
-		"textseite":"In Glasgow richtete er einen Weinkeller als Physiklabor ein. Das war eines der ersten Physiklabors der Welt. Außerdem gründete er mit einem Mechaniker eine Fabrik für wissenschaftlich-technische Geräte. Teilweise beschäftigte er sich in den folgenden Jahren mit physikalischer Grundlagenforschung, teilweise mit der technischen Nutzung physikalischer Erkenntnisse. Etwa ab 1845 war einer seiner Arbeitsschwerpunkte die Thermodynamik und insbesondere der Zusammenhang zwischen Temperatur und Wärme. 1848 entwickelte er eine Temperaturskala, die von der tiefstmöglichen Temperatur ausging. Sie wird als Kelvin-Skala oder auch als absolute Temperaturskala bezeichnet. Vorausgegangen waren Forschungen auf dem Gebiet der Thermodynamik. Thomson und Rankine erkannten, dass die Natur selbst die kleinste Temperatur vorgibt. Sie wird dann erreicht, wenn die Teilchen eines Körpers vollständig zur Ruhe kommen. Folgerichtig ordneten sie diesem Zustand die Temperatur 0 zu. Die Kelvin-Skala verwendet dieselbe Gradeinteilung wie die Celsiusskala, deshalb ist die Umrechnung sehr einfach (°C = K - 273,15). 1856 wurde Thomson Direktor des Atlantikkabelunternehmens, das sich zum Ziel gesetzt hatte, ein Fernmeldekabel zwischen Europa und Amerika durch den Atlantik hindurch zu installieren. Die letzte von vier Kabelverlegungen, die zwischen 1858 und 1866 erfolgten, war erfolgreich. Thomson beschäftigte sich auch intensiv mit elektromagnetischen Schwingungen. Nach 1870 erzielte er allerdings keine bedeutenden wissenschaftlichen Entdeckungen mehr. Für seine Lebensleistung wurde er 1892 geadelt und nannte sich seitdem Lord Kelvin of Largs. Den Namen Kelvin wählte er nach einem kleinen Fluss, der durch seinen Wohnort Largs in Schottland fließt. Lord Kelvin starb am 17. Dezember 1907 in Netherhall.",
+		"textseite":"In Glasgow richtete er einen Weinkeller als Physiklabor ein. Das war eines der ersten Physiklabors. Außerdem gründete er mit einem Mechaniker eine Fabrik für wissenschaftlich-technische Geräte. Teilweise beschäftigte er sich in den folgenden Jahren mit physikalischer Grundlagenforschung, teilweise mit der technischen Nutzung physikalischer Erkenntnisse. Etwa ab 1845 war einer seiner Arbeitsschwerpunkte die Thermodynamik und insbesondere der Zusammenhang zwischen Temperatur und Wärme. 1848 entwickelte er eine Temperaturskala, die von der tiefstmöglichen Temperatur ausging. Sie wird als Kelvin-Skala oder auch als absolute Temperaturskala bezeichnet. Vorausgegangen waren Forschungen auf dem Gebiet der Thermodynamik. Thomson und Rankine erkannten, dass die Natur selbst die kleinste Temperatur vorgibt. Sie wird dann erreicht, wenn die Teilchen eines Körpers vollständig zur Ruhe kommen. Folgerichtig ordneten sie diesem Zustand die Temperatur 0 zu. Die Kelvin-Skala verwendet dieselbe Gradeinteilung wie die Celsiusskala, deshalb ist die Umrechnung sehr einfach (°C = K - 273,15). 1856 wurde Thomson Direktor des Atlantikkabelunternehmens, das sich zum Ziel gesetzt hatte, ein Fernmeldekabel zwischen Europa und Amerika durch den Atlantik hindurch zu installieren. Die letzte von vier Kabelverlegungen, die zwischen 1858 und 1866 erfolgten, war erfolgreich. Thomson beschäftigte sich auch intensiv mit elektromagnetischen Schwingungen. Nach 1870 erzielte er allerdings keine bedeutenden wissenschaftlichen Entdeckungen mehr. Für seine Lebensleistung wurde er 1892 geadelt und nannte sich seitdem Lord Kelvin of Largs. Den Namen Kelvin wählte er nach einem kleinen Fluss, der durch seinen Wohnort Largs in Schottland fließt. Lord Kelvin starb am 17. Dezember 1907 in Netherhall.",
 		"Fragen":[
 			{
 				"Fragetext":"Was richtete Thomson in einem Weinkeller ein?",
@@ -76,6 +81,12 @@
 			"Fragetext":"Wie alt wurde William Thomson?",
 			"Antworten":["84","83","85","87"],
 			"korrekteAntwort":["83"]
+			},
+		{	"Fragetext":"Wann und wo ist Thomson gestorben?",
+			"Antworten":["In Netherhall am 17. Dezember 1907","In Netherhall am 18.12. 1907","In Glasgow am 17. Dezember 1907"],
+			"korrekteAntwort":["In Netherhall am 17. Dezember 1907"]
+
+
 			}]
 	}]
 }
