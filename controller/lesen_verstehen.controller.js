@@ -15,5 +15,5 @@ x.save(function(err, lesenverstehen){
 			}
 		});
   console.log("Json-Daten: "+JSON.stringify(req.body));
-
+  res.render('verstehLesen_ende',{title: 'Text beendet'});
 }

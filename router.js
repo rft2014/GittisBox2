@@ -36,6 +36,7 @@ module.exports = function(app, passport){
 	app.get('/admin_start', isLoggedInAsAdmin, Controller1.admin_startAction);
   app.get('/aufgabe_loesen',isLoggedInAsUser, Controller2.aufgabe_loesenAction);
   app.post('/save_lesenverstehen',isLoggedInAsUser,Controller3.lesen_verstehenAction);
+  app.get('/save_lesenverstehen',isLoggedInAsUser,Controller3.lesen_verstehenAction);
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
 
 

@@ -1,0 +1,12 @@
+extends ./base_ons
+
+html
+	head
+		title : title
+		block extrajs
+			script(src='/aufgabentypen/verstehLesen_1.js')
+			script(src='/js/app.js')
+	block content
+		ons-page
+			ons-card
+				ons-button(onclick="logout()" modifier="large") Ausloggen

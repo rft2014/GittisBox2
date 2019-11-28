@@ -99,14 +99,16 @@ function starteAufgabe(){
 	kar_weiter();
 
 	console.time('aufgabe');
-	startzeit = new Date().getTime();
+	//startzeit = new Date().getTime();
+	startzeit = new Date();
 	console.log('Gestartet: '+ startzeit);
 	start = new Date();
 
 }
 function beendeAufgabe(){
 	console.timeEnd('aufgabe');
-	let zielzeit = new Date().getTime();
+	//let zielzeit = new Date().getTime();
+	let zielzeit = new Date();
 	let dauer = zielzeit - startzeit;
 	let hours = Math.floor(dauer/(1000*60*60));
 	dauer = dauer - (hours *60*1000*60);
@@ -114,8 +116,8 @@ function beendeAufgabe(){
 	dauer = dauer - (minutes *60*1000);
 	let seconds = Math.floor(dauer/1000);
 	console.log('Dauer: '+hours + ' : '+ minutes + ' : '+seconds) ;
-	lesenverstehen.Begonnen = startzeit;
-	lesenverstehen.Abgegeben = zielzeit;
+	lesenverstehen.Begonnen = startzeit.toLocaleString('de-DE');
+	lesenverstehen.Abgegeben = zielzeit.toLocaleString('de-DE');
 	lesenverstehen.Dauer = dauer;
 	sendData();
 	window.document.location.href = '/save_lesenverstehen';
