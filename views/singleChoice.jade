@@ -41,7 +41,7 @@ html
 							p
 								a(href='/logout' class='alert button large expanded') Ausloggen
 				-	for(var i=0;i< aufgabenDaten.Aufgaben.length;i++)
-					ons-carousel-item(style="background-color:#c0c0c0")
+					ons-carousel-item(style="background-color:#c0c0c0; overflow:auto")
 						ons-card#option_
 							div.option_1 #{aufgabenDaten.Aufgaben[i].option_1}
 						ons-card#geoimage
