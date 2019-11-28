@@ -4,7 +4,7 @@
 	"description": "Vokabeln der unit 1 von Englisch nach Deutsch",
 	"klassenstufe": "5",
 	"Fach": "Eng",
-	"Aufgabentyp": "singleChoice",
+	"Aufgabentyp": "singleChoice_textinput",
 	"Aufgaben_id": "eng_00001",
 	"ZeitsteuerungMoeglich": "nein",
 	"type": "object",
@@ -30,36 +30,36 @@
 		"id": 1,
 		"option_1":"(to) say",
 		"option_2":"sagen",
-		"image"		:"rat.png"
+		"image"		:""
 	},
 {		"id": 2,
 		"option_1":"(to) put",
 		"option_2":"legen, stellen",
-		"image"		:"whale.png"
+		"image"		:""
 	},
 {
 		"id": 3,
 		"option_1":"(to)talk",
 		"option_2":"reden",
-		"image"		:"giraffe.png"
+		"image"		:""
 	},
 {
 	 	"id": 4,
 		"option_1":"(to) talk to",
 		"option_2":"reden mit, sich unterhalten",
-		"image"		:"butterfly.png"
+		"image"		:""
 	},
 {
 		"id": 5,
 		"option_1":"(to) open",
 		"option_2":"öffnen, aufmachen",
-		"image"		:"snake.png"
+		"image"		:""
 	},
 {
 		"id": 6,
 		"option_1":"(to) touch",
 		"option_2":"berühren, anfassen",
-		"image"		:"ants.png"
+		"image"		:""
 	},
 {
 		"id": 7,
