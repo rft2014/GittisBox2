@@ -1,0 +1,123 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Eng - Vokabeln unit 1 ",
+	"description": "Vokabeln der unit 1 von Englisch nach Deutsch",
+	"klassenstufe": "5",
+	"Fach": "Eng",
+	"Aufgabentyp": "singleChoice",
+	"Aufgaben_id": "eng_00001",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "Wort_englisch",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Wort_deutsch",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"(to) say",
+		"option_2":"sagen",
+		"image"		:""
+	},
+{		"id": 2,
+		"option_1":"(to) put",
+		"option_2":"legen, stellen",
+		"image"		:""
+	},
+{
+		"id": 3,
+		"option_1":"(to)talk",
+		"option_2":"reden",
+		"image"		:"sachsen-anhalt.png"
+	},
+{
+	 	"id": 4,
+		"option_1":"(to) talk to",
+		"option_2":"reden mit, sich unterhalten",
+		"image"		:""
+	},
+{
+		"id": 5,
+		"option_1":"(to) open",
+		"option_2":"öffnen, aufmachen",
+		"image"		:""
+	},
+{
+		"id": 6,
+		"option_1":"(to) touch",
+		"option_2":"berühren, anfassen",
+		"image"		:""
+	},
+{
+		"id": 7,
+		"option_1":"(to) give",
+		"option_2":"geben",
+		"image"		:""
+	},
+{
+		"id": 8,
+		"option_1":"(to) count",
+		"option_2":"zählen",
+		"image"		:""
+	},
+{
+		"id": 9,
+		"option_1":"them",
+		"option_2":"sie, ihnen",
+		"image"		:""
+	},
+{
+		"id": 10,
+		"option_1":"telephone",
+		"option_2":"Telefon",
+		"image"		:""
+	},
+{
+		"id": 11,
+		"option_1":"o",
+		"option_2":"Null (in Telefonnummern)",
+		"image"		:""
+	},
+{		"id": 12,
+		"option_1":"double",
+		"option_2":"doppel",
+		"image"		:""
+	},
+{
+		"id": 13,
+		"option_1":"See you.",
+		"option_2":"Bis gleich/Bis bald",
+		"image"		:""
+	},
+{
+	 	"id": 14,
+		"option_1":"the first day",
+		"option_2":"der erste Tag",
+		"image"		:""
+	},
+{
+		"id": 15,
+		"option_1":"at school",
+		"option_2":"in der Schule",
+		"image"		:""
+	},
+{
+		"id": 16,
+		"option_1":"kid",
+		"option_2":"Kind, Jugendliche(r)",
+		"image"		:""
+	}
+]}

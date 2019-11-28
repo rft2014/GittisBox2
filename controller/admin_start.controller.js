@@ -16,7 +16,7 @@ function admin_startAction (req, res) {
 		var ausgabe = '';
 		var newItem = [];
 		var klassen = ['5a','5b','5c','6a','6b','6c'];
-		var faecher = ['MNT', 'Geo', 'De', 'Ma']
+		var faecher = ['MNT', 'Geo', 'De', 'Ma','Eng']
 		ConfigData.find({},'aktKlasse aktAufgabe zeitgesteuert anzeigedauer aktFach',{lean:true},function(err, result){
 	if(err) throw err;
 	if(result){
