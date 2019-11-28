@@ -4,7 +4,7 @@
 	"description": "Vokabeln der unit 1 von Englisch nach Deutsch",
 	"klassenstufe": "5",
 	"Fach": "Eng",
-	"Aufgabentyp": "singleChoice_textinput",
+	"Aufgabentyp": "singleChoice",
 	"Aufgaben_id": "eng_00001",
 	"ZeitsteuerungMoeglich": "nein",
 	"type": "object",

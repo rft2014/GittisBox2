@@ -1,0 +1,141 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Eng - My favourite animal - unit 1 ",
+	"description": "Antworten als Texteingabe",
+	"klassenstufe": "5",
+	"Fach": "Eng",
+	"Aufgabentyp": "singleChoice_textinput",
+	"Aufgaben_id": "eng_00002",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "Wort_englisch",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Wort_deutsch",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"",
+		"option_2":"rat",
+		"image"		:"rat.png"
+	},
+{		"id": 2,
+		"option_1":"",
+		"option_2":"whale",
+		"image"		:"whale.png"
+	},
+{
+		"id": 3,
+		"option_1":"",
+		"option_2":"elephant",
+		"image"		:"elephant.png"
+	},
+{
+	 	"id": 4,
+		"option_1":"",
+		"option_2":"butterfly",
+		"image"		:"butterfly.png"
+	},
+{
+		"id": 5,
+		"option_1":"",
+		"option_2":"butterflies",
+		"image"		:"butterflies.png"
+	},
+{
+		"id": 6,
+		"option_1":"",
+		"option_2":"giraffe",
+		"image"		:"giraffe.png"
+	},
+{
+		"id": 7,
+		"option_1":"",
+		"option_2":"frog",
+		"image"		:"frog.png"
+	},
+{
+		"id": 8,
+		"option_1":"",
+		"option_2":"birds",
+		"image"		:"birds.png"
+	},
+{
+		"id": 9,
+		"option_1":"",
+		"option_2":"pig",
+		"image"		:"pig.png"
+	},
+{
+		"id": 10,
+		"option_1":"",
+		"option_2":"monkey",
+		"image"		:"monkey.png"
+	},
+{
+		"id": 11,
+		"option_1":"",
+		"option_2":"horse",
+		"image"		:"horse.png"
+	},
+{		"id": 12,
+		"option_1":"",
+		"option_2":"dog",
+		"image"		:"dog.png"
+	},
+{
+		"id": 13,
+		"option_1":"",
+		"option_2":"bear",
+		"image"		:"bear.png"
+	},
+{
+	 	"id": 14,
+		"option_1":"",
+		"option_2":"cat",
+		"image"		:"cat.png"
+	},
+{
+		"id": 15,
+		"option_1":"",
+		"option_2":"guinea pig",
+		"image"		:"guinea_pig.png"
+	},
+{
+		"id": 16,
+		"option_1":"",
+		"option_2":"snake",
+		"image"		:"snake.png"
+	}
+{
+	 	"id": 17,
+		"option_1":"",
+		"option_2":"ants",
+		"image"		:"ants.png"
+	},
+{
+		"id": 18,
+		"option_1":"",
+		"option_2":"lion",
+		"image"		:"lion.png"
+	},
+{
+		"id": 19,
+		"option_1":"",
+		"option_2":"rabbit",
+		"image"		:"rabbit.png"
+	}
+]}
