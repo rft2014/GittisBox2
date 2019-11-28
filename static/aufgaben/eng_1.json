@@ -30,36 +30,36 @@
 		"id": 1,
 		"option_1":"(to) say",
 		"option_2":"sagen",
-		"image"		:""
+		"image"		:"rat.png"
 	},
 {		"id": 2,
 		"option_1":"(to) put",
 		"option_2":"legen, stellen",
-		"image"		:""
+		"image"		:"whale.png"
 	},
 {
 		"id": 3,
 		"option_1":"(to)talk",
 		"option_2":"reden",
-		"image"		:"sachsen-anhalt.png"
+		"image"		:"giraffe.png"
 	},
 {
 	 	"id": 4,
 		"option_1":"(to) talk to",
 		"option_2":"reden mit, sich unterhalten",
-		"image"		:""
+		"image"		:"butterfly.png"
 	},
 {
 		"id": 5,
 		"option_1":"(to) open",
 		"option_2":"öffnen, aufmachen",
-		"image"		:""
+		"image"		:"snake.png"
 	},
 {
 		"id": 6,
 		"option_1":"(to) touch",
 		"option_2":"berühren, anfassen",
-		"image"		:""
+		"image"		:"ants.png"
 	},
 {
 		"id": 7,
