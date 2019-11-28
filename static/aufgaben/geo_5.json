@@ -1,0 +1,123 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "Geo - Hauptstädte aller Bundesländer ",
+	"description": "Namen der Haupstädte der dt. Bundesländer. Die Bundesländer werden namentlich benannt. Die Länder werden zusätzlich auf der Karte gezeigt.",
+	"klassenstufe": "5",
+	"Fach": "Geo",
+	"Aufgabentyp": "singleChoice",
+	"Aufgaben_id": "geo_00005",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "Bundesland",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Hauptstadt",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"Berlin",
+		"option_2":"Berlin",
+		"image"		:"berlin.png"
+	},
+{		"id": 2,
+		"option_1":"Brandenburg",
+		"option_2":"Potsdam",
+		"image"		:"brandenburg.png"
+	},
+{
+		"id": 3,
+		"option_1":"Sachsen-Anhalt",
+		"option_2":"Magdeburg",
+		"image"		:"sachsen-anhalt.png"
+	},
+{
+	 	"id": 4,
+		"option_1":"Thüringen",
+		"option_2":"Erfurt",
+		"image"		:"thueringen.png"
+	},
+{
+		"id": 5,
+		"option_1":"Mecklenburg-Vorpommern",
+		"option_2":"Schwerin",
+		"image"		:"mecklenburg-vorpommern.png"
+	},
+{
+		"id": 6,
+		"option_1":"Hamburg",
+		"option_2":"Hamburg",
+		"image"		:"hamburg.png"
+	},
+{
+		"id": 7,
+		"option_1":"Bremen",
+		"option_2":"Bremen",
+		"image"		:"bremen.png"
+	},
+{
+		"id": 8,
+		"option_1":"Schleswig-Holstein",
+		"option_2":"Kiel",
+		"image"		:"schleswig-holstein.png"
+	},
+{
+		"id": 9,
+		"option_1":"Niedersachsen",
+		"option_2":"Hannover",
+		"image"		:"niedersachsen.png"
+	},
+{
+		"id": 10,
+		"option_1":"Sachsen",
+		"option_2":"Dresden",
+		"image"		:"sachsen.png"
+	},
+{
+		"id": 11,
+		"option_1":"Bayern",
+		"option_2":"München",
+		"image"		:"bayern.png"
+	},
+{		"id": 12,
+		"option_1":"Baden-Würtemberg",
+		"option_2":"Stuttgart",
+		"image"		:"baden-wuertemberg.png"
+	},
+{
+		"id": 13,
+		"option_1":"Rheinland-Pfalz",
+		"option_2":"Mainz",
+		"image"		:"rheinland-pfalz.png"
+	},
+{
+	 	"id": 14,
+		"option_1":"Saarland",
+		"option_2":"Saarbrücken",
+		"image"		:"saarland.png"
+	},
+{
+		"id": 15,
+		"option_1":"Nordrhein-Westfalen",
+		"option_2":"Düsseldorf",
+		"image"		:"nordrhein-westfalen.png"
+	},
+{
+		"id": 16,
+		"option_1":"Hessen",
+		"option_2":"Wiesbaden",
+		"image"		:"hessen.png"
+	}
+]}
