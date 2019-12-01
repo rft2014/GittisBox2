@@ -44,7 +44,7 @@ function checkResults(){
   if(aktIndex  == maxAufgabenAnzahl + 1){
   for (var j=0;j<maxAufgabenAnzahl;j++){
   var e = document.getElementById('capital_'+j);
-  var antw = e.options[e.selectedIndex].value;
+  var antw = e.value;
   var loesung = json_aufgaben.Aufgaben[j].option_2;
   console.log('gewaehlt: '+antw+' richtig waere: '+loesung);
   if(antw == loesung){
@@ -56,7 +56,6 @@ function checkResults(){
                       }
               }
 }
-
 
 
 function loesung_abgeben(){
