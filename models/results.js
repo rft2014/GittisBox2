@@ -11,6 +11,7 @@ var antwortenSchema = new mongoose.Schema({
   firstname: String,
   lastname: String,
   klasse: String,
+  fach: String,
   Aufgaben_ID: String,
   Abgegeben: String,
   Korrekt: String,

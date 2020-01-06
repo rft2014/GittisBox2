@@ -1,6 +1,7 @@
  var Controller1 = require('./controller/admin_start.controller');
  var Controller2 = require('./controller/aufgabe_loesen.controller');
  var Controller3 = require('./controller/lesen_verstehen.controller');
+ var Controller4 = require('./controller/satzglieder.controller');
 var User = require('./models/user');
 var Ergebnis = require('./models/results');
 var ConfigData = require('./models/configdata');
@@ -37,6 +38,7 @@ module.exports = function(app, passport){
   app.get('/aufgabe_loesen',isLoggedInAsUser, Controller2.aufgabe_loesenAction);
   app.post('/save_lesenverstehen',isLoggedInAsUser,Controller3.lesen_verstehenAction);
   app.get('/save_lesenverstehen',isLoggedInAsUser,Controller3.lesen_verstehenAction);
+  app.get('/save_satzglieder', isLoggedInAsUser, Controller4.satzgliederAction);
 	app.get('/admin', isLoggedInAsAdmin, function (req, res) {
 
 

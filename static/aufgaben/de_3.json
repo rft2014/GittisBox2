@@ -1,0 +1,171 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "De - Tempusformen",
+	"description": "Wahl der Tempusform",
+	"klassenstufe": "5",
+	"Fach": "De",
+	"Aufgabentyp": "singleChoice",
+	"Aufgaben_id": "de_00003",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"Aufgabenstellung" : "Welche Tempusform wählst du? Du willst ausdrücken, dass",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "konjugiertes Wort",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Zeitform",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"du eine Handlung vor langer Zeit beendet hast.",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{		"id": 2,
+		"option_1":"du eine Handlung gerade oder kürzlich beendet hast.",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 3,
+		"option_1":"du eine Handlung regelmäßig durchführst",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+	 	"id": 4,
+		"option_1":"du eine Handlung gerade durchführst.",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 5,
+		"option_1":"du eine Handlung geplant hast.",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{
+		"id": 6,
+		"option_1":"deine Handlung bereits zurückliegt.",
+		"option_2":"Präteritum",
+		"image"		:""
+	},
+{
+		"id": 7,
+		"option_1":"deine Handlung sich auf jeden Fall so ereignen wird.",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 8,
+		"option_1":"etwas vor langer Zeit passiert ist und beendet wurde.",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+		"id": 9,
+		"option_1":"etwas gerade passiert ist.",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 10,
+		"option_1":"etwas regelmäßig passiert",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 11,
+		"option_1":"etwas gerade passiert.",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{		"id": 12,
+		"option_1":"etwas passieren wird.",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{
+		"id": 13,
+		"option_1":"etwas auf jeden Fall so passiert sein wird.",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+	 	"id": 14,
+		"option_1":"etwas bereits zurückliegt",
+		"option_2":"Präteritum",
+		"image"		:""
+	},
+{
+		"id": 15,
+		"option_1":"du eine Handlung vor langer Zeit beendet hast.",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+		"id": 16,
+		"option_1":"du eine Handlung gerade oder kürzlich beendet hast.",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 17,
+		"option_1":"du eine Handlung regelmäßig durchführst.",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 18,
+		"option_1":"du eine Handlung gerade durchführst.",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 19,
+		"option_1":"du eine Handlung geplant hast.",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{		"id": 20,
+		"option_1":"deine Handlung bereits zurückliegt.",
+		"option_2":"Präteritum",
+		"image"		:""
+	},
+{
+		"id": 21,
+		"option_1":"etwas passieren wird.",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{
+	 	"id": 22,
+		"option_1":"etwas auf jeden Fall so passiert sein wird.",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 23,
+		"option_1":"etwas gerade passiert ist.",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 24,
+		"option_1":"etwas regelmäßig passiert.",
+		"option_2":"Präsens",
+		"image"		:""
+	}
+]}

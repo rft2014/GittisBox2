@@ -1,0 +1,171 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "De - Konjugationsformen",
+	"description": "Bestimme folgende Konjugationsform vollständig oder weise das Merkmal einer Zeitform zu",
+	"klassenstufe": "5",
+	"Fach": "De",
+	"Aufgabentyp": "singleChoice",
+	"Aufgaben_id": "de_00002",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"Aufgabenstellung" : "",
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "konjugiertes Wort",
+			"type": "string"
+		},
+		"option_2": {
+			"description": "Zeitform",
+			"type": "string"
+		},
+		"image": {
+			"filename": " ",
+			"type": "string"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":"Ich male",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{		"id": 2,
+		"option_1":"Du hattest gelacht",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+		"id": 3,
+		"option_1":"Er sprang",
+		"option_2":"Präteritum",
+		"image"		:""
+	},
+{
+	 	"id": 4,
+		"option_1":"Wir haben gesungen",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 5,
+		"option_1":"Ihr werdet schwimmen",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{
+		"id": 6,
+		"option_1":"Sie werden den Test geschrieben haben",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 7,
+		"option_1":"ich lief",
+		"option_2":"Präteritum",
+		"image"		:""
+	},
+{
+		"id": 8,
+		"option_1":"Du bist gefahren",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 9,
+		"option_1":"Er war geflogen",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+		"id": 10,
+		"option_1":"Wir reiten",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 11,
+		"option_1":"Sie werden streiten",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{		"id": 12,
+		"option_1":"Ihr werdet gekocht haben",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 13,
+		"option_1":"Ich werde denken",
+		"option_2":"Futur I",
+		"image"		:""
+	},
+{
+	 	"id": 14,
+		"option_1":"Du wirst gemalt haben",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 15,
+		"option_1":"Er ist gegangen",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 16,
+		"option_1":"Wir hatten gesungen",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+		"id": 17,
+		"option_1":"Ihr diskutiert",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{
+		"id": 18,
+		"option_1":"Sie ist gesunken",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 19,
+		"option_1":"-e, -st, -t, en, -t, -en",
+		"option_2":"Präsens",
+		"image"		:""
+	},
+{		"id": 20,
+		"option_1":"eine Form von haben oder sein + Partizip II",
+		"option_2":"Perfekt",
+		"image"		:""
+	},
+{
+		"id": 21,
+		"option_1":"haben oder sein im Präteritum + Partizip II",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	},
+{
+	 	"id": 22,
+		"option_1":"Ich werde gesungen haben",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 23,
+		"option_1":"Du wirst gesprochen haben",
+		"option_2":"Futur II",
+		"image"		:""
+	},
+{
+		"id": 24,
+		"option_1":"Wir hatten gelesen",
+		"option_2":"Plusquamperfekt",
+		"image"		:""
+	}
+]}

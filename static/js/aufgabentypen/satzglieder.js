@@ -3,7 +3,7 @@ var json_aufgaben=0;
 var antworten = {Antwort:[]};
 var AnzahlAufgaben = 0;
 var Note = '';
-
+var Satzglieder = ["Subjekt","Prädikat","Genitivobjekt","Akkusativobjekt","Dativobjekt"];
 
 
 $(document).ready(function(){
@@ -30,6 +30,7 @@ anzeigeAufgabeInNav();
 	anzeigeAufgabeInNav();
 	checkResults();
   });
+
 var AUFGABEN = $('#alleAufg').html();
 json_aufgaben=JSON.parse(AUFGABEN);
 
@@ -43,17 +44,19 @@ function checkResults(){
   let aktIndex = document.querySelector('ons-carousel').getActiveIndex();
   if(aktIndex  == maxAufgabenAnzahl + 1){
   for (var j=0;j<maxAufgabenAnzahl;j++){
-  var e = document.getElementById('capital_'+j);
+  	for(var i=0;i<json_aufgaben.Aufgaben[j].option_2.length;i++){
+  var e = document.getElementById('auswahl'+j+i);
   var antw = e.options[e.selectedIndex].value;
-  var loesung = json_aufgaben.Aufgaben[j].option_2;
+  var loesung = json_aufgaben.Aufgaben[j].option_2[i];
   console.log('gewaehlt: '+antw+' richtig waere: '+loesung);
   if(antw == loesung){
 		korrekt =  true;
 		}else {
 			korrekt = false}
       antworten.Antwort.push({'ergebnis': antw,
-														'korrekt' : korrekt});
+								'korrekt' : korrekt});
                       }
+                  }
               }
 }
 
@@ -120,16 +123,17 @@ kar_weiter();
 let anzahl = json_aufgaben.Aufgaben.length
 $('#antwortTabelle').append('<ons-row><ons-col width=\'10%\'></ons-col><ons-col style=\'font-weight:bold\'width=\'40%\'>Antwort</ons-col><ons-col style=\'font-weight:bold\' width=\'40%\'>Lösung</ons-col><ons-col style=\'font-weight:bold\'>ok</ons-col></ons-row>');
   for (let k = 0;k<anzahl;k++){
-		var e = document.getElementById('capital_'+k);
+  	for(let l = 0;l<json_aufgaben.Aufgaben[k].option_2.length;l++){
+		var e = document.getElementById('auswahl'+k+l);
 		var antw = e.options[e.selectedIndex].value;
-		if(antw === json_aufgaben.Aufgaben[k].option_2){
-		$('#antwortTabelle').append('<ons-row><ons-col width=\'10%\' style=\'font-weight:bold; color:green\'>'+(parseInt(k)+1)+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2 +'</ons-col><ons-col><ons-icon style=\'color:green; text-align:right\' icon=\'md-check\'></ons-icon></ons-col></ons-row>');
-	}else{$('#antwortTabelle').append('<ons-row><ons-col  width=\'10%\' style=\'font-weight:bold; color:red\'>'+(parseInt(k)+1)+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2 +'</ons-col><ons-col><ons-icon style=\'color:red\' icon=\'md-close\'></ons-icon></ons-col></ons-row>');
+		if(antw === json_aufgaben.Aufgaben[k].option_2[l]){
+		$('#antwortTabelle').append('<ons-row><ons-col width=\'10%\' style=\'font-weight:bold; color:green\'>'+(parseInt(k)+1)+'.'+(parseInt(l)+1)+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2[l] +'</ons-col><ons-col><ons-icon style=\'color:green; text-align:right\' icon=\'md-check\'></ons-icon></ons-col></ons-row>');
+	}else{$('#antwortTabelle').append('<ons-row><ons-col  width=\'10%\' style=\'font-weight:bold; color:red\'>'+(parseInt(k)+1)+'.'+(parseInt(l)+1)+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2[l] +'</ons-col><ons-col><ons-icon style=\'color:red\' icon=\'md-close\'></ons-icon></ons-col></ons-row>');
 }
 
 
 
-  }
+  }}
 
 }
 
@@ -141,3 +145,4 @@ function kar_zurueck(){
 function kar_weiter(){
 	document.getElementById("kar").next();
 }
+

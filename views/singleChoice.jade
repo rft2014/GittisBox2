@@ -42,11 +42,15 @@ html
 								a(href='/logout' class='alert button large expanded') Ausloggen
 				-	for(var i=0;i< aufgabenDaten.Aufgaben.length;i++)
 					ons-carousel-item(style="background-color:#c0c0c0; overflow:auto")
+						-	if(aufgabenDaten.Aufgabenstellung !== ""){
+								ons-card #{aufgabenDaten.Aufgabenstellung}
+						-	}
 						ons-card#option_
 							div.option_1 #{aufgabenDaten.Aufgaben[i].option_1}
-						ons-card#geoimage
-							img(src='/images/#{aufgabenDaten.Aufgaben[i].image}' class='geoImages')
-							//div(id="korrekteLoesung"+i class="korrekteLoesung") #{aufgabenDaten.Aufgaben[i].ergebnis}
+						-	if(aufgabenDaten.Aufgaben[i].image !== ""){
+								ons-card#geoimage
+									img(src='/images/#{aufgabenDaten.Aufgaben[i].image}' class='geoImages')
+						-		}
 						ons-card#option_2
 							span Bitte w&auml;hle:&nbsp;&nbsp;
 							select(name="capital" id="capital_"+i)

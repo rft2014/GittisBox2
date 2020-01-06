@@ -35,7 +35,8 @@ ConfigData.find({},'aktAufgabe zeitgesteuert anzeigedauer aktAufgabentyp modus',
 									'aufgabenDaten_json':JSON.stringify(tasks),
 									'zeitgest': istZeitgesteuert,
 									'DauerAnzeige': anzeigedauer,
-									'option_2_gemischt':arr,
+									//'option_2_gemischt':arr,
+									'option_2_gemischt':[... new Set(arr)],//doppelte entfernt
 									'modus':modus,
 									});
 								}

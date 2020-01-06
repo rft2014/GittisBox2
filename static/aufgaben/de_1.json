@@ -1,0 +1,110 @@
+{
+	"$schema": "http://json-schema.org/draft-06/schema#",
+	"title": "De - Satzglieder",
+	"description": "Bestimmen der Satzglieder",
+	"klassenstufe": "5",
+	"Fach": "De",
+	"Aufgabentyp": "satzglieder",
+	"Aufgaben_id": "de_00001",
+	"ZeitsteuerungMoeglich": "nein",
+	"type": "object",
+	"Aufgabenstellung" : "Bestimme die Satzglieder!",
+	"satzgliedoptionen":[" ","Genitivobjekt","Subjekt","Dativobjekt", "Prädikat", "Akkusativobjekt"],
+	"properties": {
+		"id": {
+			"description": "laufende Nummer der Aufgabe",
+			"type": "number"
+		},
+		"option_1": {
+			"description": "Satz",
+			"type": "array"
+		},
+		"option_2": {
+			"description": "Satzglieder",
+			"type": "array"
+		}
+	},
+	"Aufgaben":[{
+		"id": 1,
+		"option_1":["Max","liest","ein Buch."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt"]
+		
+	},
+	{	
+		"id": 2,
+		"option_1":["Der", "Postbote","gibt","Sarah","einen","Brief."],
+		"option_2":["Subjekt","Subjekt","Prädikat","Dativobjekt","Akkusativobjekt","Akkusativobjekt"]
+
+	},
+	{
+		"id": 3,
+		"option_1":["Frau Dr. Wetzel","rühmt sich","ihrer Sprachkenntnisse."],
+		"option_2":["Subjekt","Prädikat","Genitivobjekt"]
+	},
+	{	
+		"id": 4,
+		"option_1":["Der Hund","geht","nach Hause."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt"]
+
+	},
+	{
+		"id": 5,
+		"option_1":["Tanja","spielt","auf dem Boden."],
+		"option_2":["Subjekt","Prädikat","Dativobjekt"]
+	},
+	{	
+		"id": 6,
+		"option_1":[ "Die Lehrer","tanzen","mit den Eltern und Schülern","in der Schuldiskothek."],
+		"option_2":["Subjekt","Prädikat","Dativobjekt","Dativobjekt"]
+
+	},
+	{
+		"id": 7,
+		"option_1":["Die Schüler","werden","vom Schulleiter","gelobt."],
+		"option_2":["Subjekt","Prädikat","Dativobjekt", "Prädikat"]
+	},
+	{	
+		"id": 8,
+		"option_1":["Der Schulleiter","lobt","die Schüler."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt"]
+
+	},
+	{
+		"id": 9,
+		"option_1":["Ich","habe","einen Frosch", "im Hals."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt", "Dativobjekt"]
+	},
+	{	
+		"id": 10,
+		"option_1":["Ich", "sehe","die Mutter meines Freundes."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt"]
+
+	},
+	{
+		"id": 11,
+		"option_1":["Er","bediente sich","einer gepflegten Ausdrucksweise."],
+		"option_2":["Subjekt","Prädikat","Genitivobjekt"]
+	},
+	{	
+		"id": 12,
+		"option_1":["Der Dieb","entledigt sich","seiner Beute."],
+		"option_2":["Subjekt","Prädikat","Genitivobjekt"]
+
+	},
+	{
+		"id": 13,
+		"option_1":["Die Schüler","bedurften","der Hilfe des Lehrers."],
+		"option_2":["Subjekt","Prädikat","Genitivobjekt"]
+	},
+	{	
+		"id": 14,
+		"option_1":["Sie", "hat","die schwere Tür","getragen."],
+		"option_2":["Subjekt","Prädikat","Akkusativobjekt","Prädikat"]
+
+	},
+	{
+		"id": 15,
+		"option_1":["Die Strafarbeit","hat","sie","erledigt."],
+		"option_2":["Akkusativobjekt","Prädikat","Subjekt","Prädikat"]
+	}
+]}
