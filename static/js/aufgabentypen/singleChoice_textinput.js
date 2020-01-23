@@ -44,7 +44,7 @@ function checkResults(){
   if(aktIndex  == maxAufgabenAnzahl + 1){
   for (var j=0;j<maxAufgabenAnzahl;j++){
   var e = document.getElementById('capital_'+j);
-  var antw = e.options[e.selectedIndex].value;
+  var antw = e.value;
   var loesung = json_aufgaben.Aufgaben[j].option_2;
   console.log('gewaehlt: '+antw+' richtig waere: '+loesung);
   if(antw == loesung){
@@ -56,7 +56,6 @@ function checkResults(){
                       }
               }
 }
-
 
 
 function loesung_abgeben(){
@@ -116,24 +115,7 @@ function anzeigeAufgabeInNav(){
   }
 }
 
-function antworten_pruefen(){
-kar_weiter();
 
-let anzahl = json_aufgaben.Aufgaben.length
-$('#antwortTabelle').append('<ons-row><ons-col width=\'10%\'></ons-col><ons-col style=\'font-weight:bold\'width=\'40%\'>Antwort</ons-col><ons-col style=\'font-weight:bold\' width=\'40%\'>Lösung</ons-col><ons-col style=\'font-weight:bold\'>ok</ons-col></ons-row>');
-  for (let k = 0;k<anzahl;k++){
-		var e = document.getElementById('capital_'+k);
-		var antw = e.options[e.selectedIndex].value;
-		if(antw === json_aufgaben.Aufgaben[k].option_2){
-		$('#antwortTabelle').append('<ons-row><ons-col width=\'10%\' style=\'font-weight:bold; color:green\'>'+(parseInt(k)+1)+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:green\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2 +'</ons-col><ons-col><ons-icon style=\'color:green; text-align:right\' icon=\'md-check\'></ons-icon></ons-col></ons-row>');
-	}else{$('#antwortTabelle').append('<ons-row><ons-col  width=\'10%\' style=\'font-weight:bold; color:red\'>'+(parseInt(k)+1)+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+antw+'</ons-col><ons-col style=\'color:red\' width=\'40%\'>'+ json_aufgaben.Aufgaben[k].option_2 +'</ons-col><ons-col><ons-icon style=\'color:red\' icon=\'md-close\'></ons-icon></ons-col></ons-row>');
-}
-
-
-
-  }
-
-}
 
 
 function kar_zurueck(){

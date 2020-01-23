@@ -106,7 +106,14 @@ table thead th {
 #aufgabenStellung {
   padding: 10px !important;
 }
+<<<<<<< HEAD
 
 table {
   width: 100%;
 }
+=======
+input {
+  width: 100%;
+  font-size: 30px;
+}
+>>>>>>> c8ab1b9113ad29afebbab6f789bee809a1604970
